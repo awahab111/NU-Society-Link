@@ -18,4 +18,25 @@ INSERT INTO Users (RollNumber, Username, Password, Email) VALUES
 
 
 
-select RollNumber from users
+select * from users
+
+
+CREATE TABLE Society (
+    SocietyId INT IDENTITY(1,1) PRIMARY KEY,
+    SocietyName VARCHAR(255),
+    SocietyDescription TEXT,
+    SocietyType VARCHAR(255),
+    SocietySupervisor VARCHAR(255),
+    SocietySupervisorContact VARCHAR(255),
+    SocietySupervisorEmail VARCHAR(255),
+    SocietySupervisorDesignation VARCHAR(255),
+    SocietySupervisorDepartment VARCHAR(255),
+    SocietyLogoBase64 TEXT
+);
+
+drop table Society
+
+select * from Society
+
+INSERT INTO Society (SocietyName, SocietyDescription, SocietyType, SocietySupervisor, SocietySupervisorContact, SocietySupervisorEmail, SocietySupervisorDesignation, SocietySupervisorDepartment, SocietyLogoBase64)
+VALUES ('Test Society', 'This is a test society.', 'Type1', 'John Doe', '1234567890', 'john.doe@example.com', 'Supervisor', 'Department1','Base64 string of the image');

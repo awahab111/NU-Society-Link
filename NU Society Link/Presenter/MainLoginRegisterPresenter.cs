@@ -24,9 +24,17 @@ namespace NU_Society_Link.Presenter
             this.userDBHandler = new UserDBHandler();
             loginView = UserLoginView.GetInstance((Form)view);
             userPresenter = new UserPresenter(loginView, this.userDBHandler);
+            userPresenter.LoginSuccess += ShowMainView;
             ShowLogin(null, EventArgs.Empty);
         }
 
+        private void ShowMainView(object? sender, EventArgs e)
+        {
+            MainView mainView = new MainView();
+            MainPresenter mainPresenter = new MainPresenter(mainView); // Use the appropriate constructor for MainPresenter
+            mainView.Show();
+            this.view.Hide();
+        }
         public void ShowLogin(object? sender, EventArgs e)
         {
             loginView = UserLoginView.GetInstance((Form)view);
@@ -40,6 +48,7 @@ namespace NU_Society_Link.Presenter
             userRegisterPresenter = userRegisterPresenter ?? new UserRegisterPresenter(registerView, this.userDBHandler);
             this.registerView.Login += ShowLogin;
         }
+        
 
     }
 }

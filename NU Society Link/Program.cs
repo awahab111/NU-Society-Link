@@ -30,9 +30,8 @@ namespace NU_Society_Link
                 Debug.WriteLine("Database connection failed");
             }
 
-            MainLoginRegister view = new MainLoginRegister();
-            UserDBHandler model = new UserDBHandler();
-            new MainLoginRegisterPresenter(view);
+            MainView view = new MainView();
+            new MainPresenter(view);
             
             Application.Run((Form)view);
             

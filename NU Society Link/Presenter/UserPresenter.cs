@@ -15,6 +15,8 @@ namespace NU_Society_Link.Presenter
         private UserLoginView view;
         private UserDBHandler model;
 
+        public event EventHandler? LoginSuccess;
+
         public UserPresenter(UserLoginView view, UserDBHandler model)
         {
             this.view = view;
@@ -22,6 +24,12 @@ namespace NU_Society_Link.Presenter
             this.view.Login += GetUser;
             this.view.Show();
         }
+
+        void OnLoginSuccess()
+        {
+            LoginSuccess?.Invoke(this, EventArgs.Empty);
+        }
+
 
         private void GetUser(object? sender, EventArgs e)
         {
@@ -32,8 +40,13 @@ namespace NU_Society_Link.Presenter
                 this.view.LoginSuccess = "Login Failed!";
                 return;
             }   
-
-            this.view.LoginSuccess = "Login Successful!" ;
+            else
+            {
+                this.view.LoginSuccess = "Login Success!";
+                // ShowMainView();
+                OnLoginSuccess();
+            }    
+        
         }
 
         
