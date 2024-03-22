@@ -15,7 +15,9 @@ namespace NU_Society_Link.Presenter
         private UserLoginView view;
         private UserDBHandler model;
 
-        public event EventHandler? LoginSuccess;
+        public event EventHandler? UserLogin;
+        public event EventHandler? AdminLogin;
+
 
         public UserPresenter(UserLoginView view, UserDBHandler model)
         {
@@ -25,9 +27,15 @@ namespace NU_Society_Link.Presenter
             this.view.Show();
         }
 
-        void OnLoginSuccess()
+        void OnUserLogin()
         {
-            LoginSuccess?.Invoke(this, EventArgs.Empty);
+            UserLogin?.Invoke(this, EventArgs.Empty);
+        }
+
+        
+        void OnAdminLogin()
+        {
+            AdminLogin?.Invoke(this, EventArgs.Empty);
         }
 
 
@@ -40,11 +48,13 @@ namespace NU_Society_Link.Presenter
                 this.view.LoginSuccess = "Login Failed!";
                 return;
             }   
-            else
-            {
+            else if(currentuser.isAdmin == true){
                 this.view.LoginSuccess = "Login Success!";
-                // ShowMainView();
-                OnLoginSuccess();
+                OnAdminLogin();
+            }
+            else{
+                this.view.LoginSuccess = "Login Success!";
+                OnUserLogin();
             }    
         
         }

@@ -33,9 +33,10 @@ namespace NU_Society_Link.Presenter
             var designation = view.Designation;
             var department = view.Department;
 
-            societyDBHandler.SaveSociety(new Society(logoBase64, societyName, description, type, supervisor, contact, email, designation, department));
+            societyDBHandler.SaveSociety(new Society(logoBase64, societyName, description, type, supervisor, contact, email, designation, department, false));
         }
 
+        // TODO create an admin panel from where the admin can view all the societies and approve them
 
     }
 }

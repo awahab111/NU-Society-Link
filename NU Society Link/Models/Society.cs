@@ -8,6 +8,7 @@ namespace NU_Society_Link.Models
 {
     public class Society
     {
+        private int societyID;
         private string societyName;
         private string societyDescription;
         private string societyType;
@@ -17,9 +18,11 @@ namespace NU_Society_Link.Models
         private string? societySupervisorDesignation;
         private string? societySupervisorDepartment;
 
+        private bool isApproved;
+
         private string societyLogo;
 
-        public Society(string societylogo, string societyName, string societyDescription, string societyType,string societySupervisor, string societySupervisorContact, string societySupervisorEmail, string societySupervisorDesignation, string societySupervisorDepartment)
+        public Society(string societylogo, string societyName, string societyDescription, string societyType,string societySupervisor, string societySupervisorContact, string societySupervisorEmail, string societySupervisorDesignation, string societySupervisorDepartment, bool isApproved)
         {
             this.societyName = societyName;
             this.societyDescription = societyDescription;
@@ -30,8 +33,10 @@ namespace NU_Society_Link.Models
             this.societySupervisorDesignation = societySupervisorDesignation;
             this.societySupervisorDepartment = societySupervisorDepartment;
             this.societyLogo = societylogo;
+            this.isApproved = isApproved;
         }
-
+        
+        public int SocietyId { get => societyID; set => societyID = value; }
         public string SocietyName { get => societyName; set => societyName = value; }
         public string SocietyDescription { get => societyDescription; set => societyDescription = value; }
         public string SocietyType { get => societyType; set => societyType = value; }
@@ -41,5 +46,6 @@ namespace NU_Society_Link.Models
         public string? SocietySupervisorDesignation { get => societySupervisorDesignation; set => societySupervisorDesignation = value; }
         public string? SocietySupervisorDepartment { get => societySupervisorDepartment; set => societySupervisorDepartment = value; }
         public string SocietyLogo { get => societyLogo; set => societyLogo = value; }
+        public bool IsApproved { get => isApproved; set => isApproved = value; }
     }
 }

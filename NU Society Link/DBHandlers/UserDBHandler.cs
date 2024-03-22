@@ -12,16 +12,16 @@ namespace NU_Society_Link.DBHandlers
     {
         Database db = Database.GetInstance;
 
-        public void AddUser(int id, string username, string password, string email)
+        public void AddUser(int id, string username, string password)
         {
-            string query = "INSERT INTO users (RollNumber, username, password, email) VALUES (@id, @username, @password, @email)";
+            string query = "INSERT INTO users (RollNumber, username, password, isadmin) VALUES (@id, @username, @password, @isadmin)";
             using (var command = db.connection.CreateCommand())
             {
                 command.CommandText = query;
                 command.Parameters.AddWithValue("@id", id);
                 command.Parameters.AddWithValue("@username", username);
                 command.Parameters.AddWithValue("@password", password);
-                command.Parameters.AddWithValue("@email", email);
+                command.Parameters.AddWithValue("@isadmin", 0);
                 command.ExecuteNonQuery();
             }
         }
@@ -36,10 +36,7 @@ namespace NU_Society_Link.DBHandlers
         }
         public User GetUser(string username, string password)
         {
-            
             string query = "SELECT * FROM users WHERE username = @username AND password = @password";
-            // Add your code here to retrieve the user based on the username
-
             using (var command = db.connection.CreateCommand())
             {
                 command.CommandText = query;
@@ -52,12 +49,13 @@ namespace NU_Society_Link.DBHandlers
                         int id = int.Parse(reader.GetString(0));
                         string db_user = reader.GetString(1);
                         string db_pass = reader.GetString(2);
-                        User user = new User(id, username, password);
+                        bool isadmin = reader.GetBoolean(3);
+                        User user = new User(id, username, password, isadmin);
                         return user;
                     }
                 }
             }
-            // Return the user
+            // User not found, return null
             return null;
         }
         public List<User> GetAllUsers()

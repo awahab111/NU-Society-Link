@@ -13,6 +13,9 @@ namespace NU_Society_Link
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
+        /// 
+
+
         [STAThread]
         static void Main()
         {
@@ -30,8 +33,8 @@ namespace NU_Society_Link
                 Debug.WriteLine("Database connection failed");
             }
 
-            MainView view = new MainView();
-            new MainPresenter(view);
+            MainLoginRegister view = new MainLoginRegister();
+            new MainLoginRegisterPresenter(view);
             
             Application.Run((Form)view);
             
