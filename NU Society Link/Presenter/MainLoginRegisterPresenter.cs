@@ -34,7 +34,7 @@ namespace NU_Society_Link.Presenter
             MainView mainView = new MainView();
             MainPresenter mainPresenter = new MainPresenter(mainView, userDBHandler.GetUser(loginView.Username, loginView.Password)); // Use the appropriate constructor for MainPresenter
             mainView.Show();
-            this.view.Hide();
+            // this.view.Close();
         }
 
         private void ShowAdminMainView(object? sender, EventArgs e)
@@ -42,8 +42,9 @@ namespace NU_Society_Link.Presenter
             AdminMainView adminMainView = new AdminMainView();
             AdminMainPresenter adminMainPresenter = new AdminMainPresenter(adminMainView); // Use the appropriate constructor for AdminMainPresenter
             adminMainView.Show();
-            this.view.Hide();
+            // this.view.Close();
         }
+
 
 
         public void ShowLogin(object? sender, EventArgs e)

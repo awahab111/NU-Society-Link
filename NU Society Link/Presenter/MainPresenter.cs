@@ -14,6 +14,7 @@ namespace NU_Society_Link.Presenter
         private MainView view;
         private AddSocietyPresenter addSocietyPresenter;
         private MembersPresenter membersPresenter;
+        private MainWelcomePresenter mainWelcomePresenter;
 
         private User user;
 
@@ -21,34 +22,58 @@ namespace NU_Society_Link.Presenter
         {
             this.view = view;
             this.user = u;
-            Debug.WriteLine("User" + user.Id);
 
             this.view.AddSociety += AddSociety;
             this.view.MembersView += Members;
-            this.view.Show();
+            this.view.Back += MainWelcome;
+            this.view.Logout += Logout;
+            MainWelcome(null, EventArgs.Empty);
+        }
+
+        private void Logout(object? sender, EventArgs e)
+        {
+            Clear();
+            view.Close();
+
+            MainLoginRegister mainLoginRegister = new MainLoginRegister();
+            MainLoginRegisterPresenter mainLoginRegisterPresenter = new MainLoginRegisterPresenter(mainLoginRegister);
+            mainLoginRegister.Show();
+
+
         }
 
         public void AddSociety(object? sender, EventArgs e)
         {
-            Debug.WriteLine("Add Society Clicked");
+            Clear();
             AddSocietyView addSocietyView = AddSocietyView.GetInstance(view);
-            membersPresenter?.Dispose();
-            MembersView.GetInstance(view).Delete();
-
             addSocietyPresenter = new AddSocietyPresenter(addSocietyView); // Assign the variable
             addSocietyView.BringToFront();
         }
 
         public void Members(object? sender, EventArgs e)
         {
-            Debug.WriteLine("Members Clicked");
+            Clear();
             MembersView membersView = MembersView.GetInstance(view);
-            addSocietyPresenter?.Dispose();
-            AddSocietyView.GetInstance(view).Delete();
-                        Debug.WriteLine("User" + user.Id);
-
             membersPresenter = new MembersPresenter(membersView, user); // Assign the value directly to the field
             membersView.BringToFront();
         }
+
+        private void MainWelcome(object? sender, EventArgs e){
+            Clear();
+            MainWelcomePage mainWelcomePage = MainWelcomePage.GetInstance(view);
+            mainWelcomePresenter = new MainWelcomePresenter(mainWelcomePage, user);
+        }
+        
+        public void Clear(){
+            addSocietyPresenter?.Dispose();
+            membersPresenter?.Dispose();
+            mainWelcomePresenter?.Dispose();
+
+            AddSocietyView.GetInstance(view).Delete();
+            MembersView.GetInstance(view).Delete();
+            MainWelcomePage.GetInstance(view).Delete();
+
+        }
+
     }
 }

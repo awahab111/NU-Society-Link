@@ -15,7 +15,6 @@ namespace NU_Society_Link.View
         public MainLoginRegister()
         {
             InitializeComponent();
-            
         }
     }
 }

@@ -66,3 +66,20 @@ VALUES ('1001', 6, 'John Doe', 'john.doe@example.com', '1234567890', 'President'
        ('1002', 6, 'Jane Smith', 'jane.smith@example.com', '0987654321', 'President', '2022'),
        ('3456', 2, 'Bob Johnson', 'bob.johnson@example.com', '1122334455', 'Secretary', '2023'),
        ('4567', 2, 'Alice Williams', 'alice.williams@example.com', '5566778899', 'Treasurer', '2023');
+
+CREATE TABLE Notifications (
+    NotificationId INT IDENTITY(1,1) PRIMARY KEY,
+    UserId VARCHAR(4),
+    Message VARCHAR(255),
+    TimeStamp DATETIME DEFAULT GETDATE(),
+    Seen BIT DEFAULT 0,
+    FOREIGN KEY (UserId) REFERENCES Users(RollNumber)
+);
+
+INSERT INTO Notifications (UserId, Message, Seen)
+VALUES ('1001', 'Your application has been approved.', 0),
+       ('1002', 'Your application has been rejected.', 0),
+       ('1002', 'Your application is under review.', 0),
+       ('1002', 'Your application has been received.', 0);
+
+select * from Notifications

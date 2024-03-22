@@ -5,6 +5,8 @@
         private System.Windows.Forms.Panel leftPanel;
         private System.Windows.Forms.Button AddSocietybtn;
         private System.Windows.Forms.Button Membersbtn; // Added button for Members
+        private System.Windows.Forms.Button Backbtn; // Added button for Back
+        private System.Windows.Forms.Button Logoutbtn; // Added button for Logout
 
         /// <summary>
         /// Required designer variable.
@@ -35,6 +37,8 @@
             leftPanel = new Panel();
             AddSocietybtn = new Button();
             Membersbtn = new Button();
+            Backbtn = new Button();
+            Logoutbtn = new Button(); // Initialize Logout button
             leftPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -43,6 +47,8 @@
             leftPanel.BackColor = Color.LightGray;
             leftPanel.Controls.Add(AddSocietybtn);
             leftPanel.Controls.Add(Membersbtn);
+            leftPanel.Controls.Add(Backbtn);
+            leftPanel.Controls.Add(Logoutbtn); // Add Logout button to leftPanel
             leftPanel.Dock = DockStyle.Left;
             leftPanel.Location = new Point(0, 0);
             leftPanel.Name = "leftPanel";
@@ -64,6 +70,22 @@
             Membersbtn.Size = new Size(197, 23);
             Membersbtn.TabIndex = 1;
             Membersbtn.Text = "Members";
+            // 
+            // Backbtn
+            // 
+            Backbtn.Location = new Point(0, 526);
+            Backbtn.Name = "Backbtn";
+            Backbtn.Size = new Size(197, 23);
+            Backbtn.TabIndex = 2;
+            Backbtn.Text = "Back";
+            // 
+            // Logoutbtn
+            // 
+            Logoutbtn.Location = new Point(0, 172); // Set the position of Logout button
+            Logoutbtn.Name = "Logoutbtn";
+            Logoutbtn.Size = new Size(197, 23);
+            Logoutbtn.TabIndex = 3;
+            Logoutbtn.Text = "Logout"; // Set the text of Logout button
             // 
             // MainView
             // 
