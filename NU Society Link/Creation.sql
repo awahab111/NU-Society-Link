@@ -1,8 +1,5 @@
 CREATE DATABASE SMS
 use SMS
-use master
-DROP DATABASE SMS
-
 
 CREATE TABLE Users (
     RollNumber VARCHAR(4) PRIMARY KEY,
@@ -11,18 +8,11 @@ CREATE TABLE Users (
     isAdmin BIT
 );
 
-drop table Users
-
 INSERT INTO Users (RollNumber, Username, Password, isAdmin) VALUES
 ('1001', 'admin', 'admin', 1),
 ('1002', '1', '1', 0),
 ('1003', 'user3', 'passwordhash3' ,0),
 ('1004', 'user4', 'passwordhash4' ,0);
-
-
-
-SELECT * FROM users WHERE username = '1' AND password = '1'
-select * from users
 
 
 CREATE TABLE Society (
@@ -39,14 +29,10 @@ CREATE TABLE Society (
 	IsApproved BIT Default 0
 );
 
-drop table Society
-
-delete society
-
-select * from Society where SocietyName= 'bhbhrb Society'
 
 INSERT INTO Society (SocietyName, SocietyDescription, SocietyType, SocietySupervisor, SocietySupervisorContact, SocietySupervisorEmail, SocietySupervisorDesignation, SocietySupervisorDepartment, SocietyLogoBase64, isApproved)
-VALUES ('eee Society', 'This is a test society.', 'Type1', 'John Doe', '1234567890', 'john.doe@example.com', 'Supervisor', 'Department1','NONE', 0);
+VALUES ('bhbhrb Society', 'This is a test society.', 'Type1', 'John Doe', '1234567890', 'john.doe@example.com', 'Supervisor', 'Department1','NONE', 0);
+
 
 CREATE TABLE SocietyMembers (
     RollNum VARCHAR(4) PRIMARY KEY,
@@ -60,14 +46,11 @@ CREATE TABLE SocietyMembers (
 	FOREIGN KEY (RollNum) REFERENCES Users(RollNumber)
 );
 
-select * from SocietyMembers
-
-delete SocietyMembers
-
 INSERT INTO SocietyMembers (RollNum, SocietyId, MemberName, MemberEmail, MemberContact, MemberPosition, MemberBatch)
-VALUES ('1001', 1, 'John Doe', 'john.doe@example.com', '1234567890', 'President', '2022'),
-       ('1002', 1, 'Jane Smith', 'jane.smith@example.com', '0987654321', 'President', '2022');
-
+VALUES ('1001', 6, 'John Doe', 'john.doe@example.com', '1234567890', 'President', '2022'),
+       ('1002', 6, 'Jane Smith', 'jane.smith@example.com', '0987654321', 'President', '2022'),
+       ('3456', 2, 'Bob Johnson', 'bob.johnson@example.com', '1122334455', 'Secretary', '2023'),
+       ('4567', 2, 'Alice Williams', 'alice.williams@example.com', '5566778899', 'Treasurer', '2023');
 
 CREATE TABLE Notifications (
     NotificationId INT IDENTITY(1,1) PRIMARY KEY,
@@ -83,5 +66,3 @@ VALUES ('1001', 'Your application has been approved.', 0),
        ('1002', 'Your application has been rejected.', 0),
        ('1002', 'Your application is under review.', 0),
        ('1002', 'Your application has been received.', 0);
-
-select * from Notifications

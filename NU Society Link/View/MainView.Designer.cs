@@ -38,7 +38,7 @@
             AddSocietybtn = new Button();
             Membersbtn = new Button();
             Backbtn = new Button();
-            Logoutbtn = new Button(); // Initialize Logout button
+            Logoutbtn = new Button();
             leftPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,12 +48,13 @@
             leftPanel.Controls.Add(AddSocietybtn);
             leftPanel.Controls.Add(Membersbtn);
             leftPanel.Controls.Add(Backbtn);
-            leftPanel.Controls.Add(Logoutbtn); // Add Logout button to leftPanel
+            leftPanel.Controls.Add(Logoutbtn);
             leftPanel.Dock = DockStyle.Left;
             leftPanel.Location = new Point(0, 0);
             leftPanel.Name = "leftPanel";
             leftPanel.Size = new Size(200, 561);
             leftPanel.TabIndex = 0;
+            leftPanel.Paint += leftPanel_Paint;
             // 
             // AddSocietybtn
             // 
@@ -81,11 +82,11 @@
             // 
             // Logoutbtn
             // 
-            Logoutbtn.Location = new Point(0, 172); // Set the position of Logout button
+            Logoutbtn.Location = new Point(0, 497);
             Logoutbtn.Name = "Logoutbtn";
             Logoutbtn.Size = new Size(197, 23);
             Logoutbtn.TabIndex = 3;
-            Logoutbtn.Text = "Logout"; // Set the text of Logout button
+            Logoutbtn.Text = "Logout";
             // 
             // MainView
             // 
@@ -98,6 +99,13 @@
             Text = "MainView";
             leftPanel.ResumeLayout(false);
             ResumeLayout(false);
+        }
+
+        // Event handler for painting rounded corners
+        private void leftPanel_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, leftPanel.ClientRectangle, Color.Black, ButtonBorderStyle.Solid);
+            leftPanel.Region = new Region(new Rectangle(0, 0, leftPanel.Width, leftPanel.Height));
         }
 
         #endregion

@@ -4,6 +4,8 @@
     {
         private System.Windows.Forms.Panel leftPanel;
         private System.Windows.Forms.Button ApproveSociety;
+        private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.Button LogoutButton;
 
         /// <summary>
         /// Required designer variable.
@@ -33,6 +35,8 @@
         {
             leftPanel = new Panel();
             ApproveSociety = new Button();
+            BackButton = new Button();
+            LogoutButton = new Button();
             leftPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -40,6 +44,8 @@
             // 
             leftPanel.BackColor = Color.LightGray;
             leftPanel.Controls.Add(ApproveSociety);
+            leftPanel.Controls.Add(BackButton);
+            leftPanel.Controls.Add(LogoutButton);
             leftPanel.Dock = DockStyle.Left;
             leftPanel.Location = new Point(0, 0);
             leftPanel.Name = "leftPanel";
@@ -54,14 +60,30 @@
             ApproveSociety.TabIndex = 0;
             ApproveSociety.Text = "Approve Society";
             // 
-            // MainView
+            // BackButton
+            // 
+            BackButton.Location = new Point(0, 484);
+            BackButton.Name = "BackButton";
+            BackButton.Size = new Size(197, 23);
+            BackButton.TabIndex = 1;
+            BackButton.Text = "Back";
+            // 
+            // LogoutButton
+            // 
+            LogoutButton.Location = new Point(0, 513);
+            LogoutButton.Name = "LogoutButton";
+            LogoutButton.Size = new Size(197, 23);
+            LogoutButton.TabIndex = 2;
+            LogoutButton.Text = "Log Out";
+            // 
+            // AdminMainView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(984, 561);
             Controls.Add(leftPanel);
             IsMdiContainer = true;
-            Name = "Admin Main View";
+            Name = "AdminMainView";
             Text = "Admin Main View";
             leftPanel.ResumeLayout(false);
             ResumeLayout(false);

@@ -1,5 +1,6 @@
 using NU_Society_Link;
 using NU_Society_Link.Models;
+using NU_Society_Link.Presenter;
 
 namespace NU_Society_Link.DBHandlers
 {
@@ -64,6 +65,28 @@ namespace NU_Society_Link.DBHandlers
             }
             return null;
         }   
+
+        public void AddMember(string memberName, string memberEmail, string memberContact, string memberPosition, string memberBatch, string rollNum, string societyName){
+            
+            SocietyDBHandler societyDBHandler = new SocietyDBHandler();
+            Society society = societyDBHandler.GetSociety(societyName);
+
+            int societyId = society.SocietyId;
+
+            string query = @"insert into SocietyMembers (RollNum, SocietyId, MemberName, MemberEmail, MemberContact, MemberPosition, MemberBatch) values (@rollNum, @societyId, @memberName, @memberEmail, @memberContact, @memberPosition, @memberBatch)";
+            using (var command = db.connection.CreateCommand())
+            {
+                command.CommandText = query;
+                command.Parameters.AddWithValue("@rollNum", rollNum);
+                command.Parameters.AddWithValue("@societyId", societyId);
+                command.Parameters.AddWithValue("@memberName", memberName);
+                command.Parameters.AddWithValue("@memberEmail", memberEmail);
+                command.Parameters.AddWithValue("@memberContact", memberContact);
+                command.Parameters.AddWithValue("@memberPosition", memberPosition);
+                command.Parameters.AddWithValue("@memberBatch", memberBatch);
+                command.ExecuteNonQuery();
+            }
+        }
 
 
 

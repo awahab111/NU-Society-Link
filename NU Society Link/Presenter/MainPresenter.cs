@@ -28,18 +28,16 @@ namespace NU_Society_Link.Presenter
             this.view.Back += MainWelcome;
             this.view.Logout += Logout;
             MainWelcome(null, EventArgs.Empty);
+            this.view.Show();
         }
 
         private void Logout(object? sender, EventArgs e)
         {
             Clear();
-            view.Close();
-
             MainLoginRegister mainLoginRegister = new MainLoginRegister();
             MainLoginRegisterPresenter mainLoginRegisterPresenter = new MainLoginRegisterPresenter(mainLoginRegister);
             mainLoginRegister.Show();
-
-
+            view.Close();
         }
 
         public void AddSociety(object? sender, EventArgs e)

@@ -6,9 +6,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnAddMember; // Added button
         private System.Windows.Forms.DataGridView dgvMembers;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMemberName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPosition;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colBatch;
         private System.Windows.Forms.Label lblWarning; // Added label
         private System.ComponentModel.IContainer components = null;
 
@@ -27,10 +24,10 @@
             btnSearch = new Button();
             btnAddMember = new Button();
             dgvMembers = new DataGridView();
+            lblWarning = new Label();
             colMemberName = new DataGridViewTextBoxColumn();
             colPosition = new DataGridViewTextBoxColumn();
             colBatch = new DataGridViewTextBoxColumn();
-            lblWarning = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvMembers).BeginInit();
             SuspendLayout();
             // 
@@ -38,12 +35,12 @@
             // 
             txtSearch.Location = new Point(12, 8);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(200, 23);
+            txtSearch.Size = new Size(470, 23);
             txtSearch.TabIndex = 0;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(218, 8);
+            btnSearch.Location = new Point(488, 8);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(85, 25);
             btnSearch.TabIndex = 1;
@@ -51,7 +48,7 @@
             // 
             // btnAddMember
             // 
-            btnAddMember.Location = new Point(684, 48);
+            btnAddMember.Location = new Point(624, 52);
             btnAddMember.Name = "btnAddMember";
             btnAddMember.Size = new Size(100, 25);
             btnAddMember.TabIndex = 2;
@@ -67,27 +64,9 @@
             dgvMembers.Name = "dgvMembers";
             dgvMembers.ReadOnly = true;
             dgvMembers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMembers.Size = new Size(634, 400);
+            dgvMembers.Size = new Size(561, 400);
             dgvMembers.TabIndex = 3;
             dgvMembers.SortCompare += DgvMembers_SortCompare;
-            // 
-            // colMemberName
-            // 
-            colMemberName.HeaderText = "Member Name";
-            colMemberName.Name = "colMemberName";
-            colMemberName.ReadOnly = true;
-            // 
-            // colPosition
-            // 
-            colPosition.HeaderText = "Position";
-            colPosition.Name = "colPosition";
-            colPosition.ReadOnly = true;
-            // 
-            // colBatch
-            // 
-            colBatch.HeaderText = "Batch";
-            colBatch.Name = "colBatch";
-            colBatch.ReadOnly = true;
             // 
             // lblWarning
             // 
@@ -95,14 +74,35 @@
             lblWarning.ForeColor = Color.Red;
             lblWarning.Location = new Point(12, 448);
             lblWarning.Name = "lblWarning";
-            lblWarning.Size = new Size(194, 15);
+            lblWarning.Size = new Size(0, 15);
             lblWarning.TabIndex = 4;
+            // 
+            // colMemberName
+            // 
+            colMemberName.HeaderText = "Member Name";
+            colMemberName.Name = "colMemberName";
+            colMemberName.ReadOnly = true;
+            colMemberName.Width = 175;
+            // 
+            // colPosition
+            // 
+            colPosition.HeaderText = "Position";
+            colPosition.Name = "colPosition";
+            colPosition.ReadOnly = true;
+            colPosition.Width = 170;
+            // 
+            // colBatch
+            // 
+            colBatch.HeaderText = "Batch";
+            colBatch.Name = "colBatch";
+            colBatch.ReadOnly = true;
+            colBatch.Width = 170;
             // 
             // MembersView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(826, 495);
+            ClientSize = new Size(781, 495);
             Controls.Add(txtSearch);
             Controls.Add(btnSearch);
             Controls.Add(btnAddMember);
@@ -119,5 +119,9 @@
         {
             // Perform custom sorting logic here
         }
+
+        private DataGridViewTextBoxColumn colMemberName;
+        private DataGridViewTextBoxColumn colPosition;
+        private DataGridViewTextBoxColumn colBatch;
     }
 }

@@ -19,9 +19,6 @@
         private System.Windows.Forms.TextBox txtSupervisorContact;
         private System.Windows.Forms.TextBox txtSupervisorEmail;
         private System.Windows.Forms.TextBox txtSupervisorDepartment;
-
-        // Add other controls
-        private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Button approveSocietyBtn;
 
@@ -66,7 +63,6 @@
             txtSupervisorContact = new TextBox();
             txtSupervisorEmail = new TextBox();
             txtSupervisorDepartment = new TextBox();
-            closeButton = new Button();
             approveSocietyBtn = new Button();
             showDescription = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
@@ -188,17 +184,9 @@
             txtSupervisorDepartment.Size = new Size(100, 23);
             txtSupervisorDepartment.TabIndex = 25;
             // 
-            // closeButton
-            // 
-            closeButton.Location = new Point(736, 10);
-            closeButton.Name = "closeButton";
-            closeButton.Size = new Size(54, 40);
-            closeButton.TabIndex = 27;
-            closeButton.Text = "Close";
-            // 
             // approveSocietyBtn
             // 
-            approveSocietyBtn.Location = new Point(650, 10);
+            approveSocietyBtn.Location = new Point(668, 10);
             approveSocietyBtn.Name = "approveSocietyBtn";
             approveSocietyBtn.Size = new Size(80, 40);
             approveSocietyBtn.TabIndex = 28;
@@ -233,7 +221,6 @@
             Controls.Add(txtSupervisorContact);
             Controls.Add(txtSupervisorEmail);
             Controls.Add(txtSupervisorDepartment);
-            Controls.Add(closeButton);
             Controls.Add(approveSocietyBtn);
             Name = "SocietyInformationView";
             Text = "SocietyInformationView";

@@ -1,3 +1,4 @@
+using Microsoft.VisualBasic;
 using NU_Society_Link.DBHandlers;
 
 namespace NU_Society_Link.Models
@@ -101,6 +102,36 @@ namespace NU_Society_Link.Models
                         {
                             SocietyId = societyID
                         };
+                    }
+                }
+            }
+            return society;
+        }
+
+        public Society GetSociety(string name){
+            Society society = null;
+            string query = @"SELECT * FROM Society WHERE SocietyName = @name";
+            using (var command = db.connection.CreateCommand())
+            {
+                command.CommandText = query;
+                command.Parameters.AddWithValue("@name", name);
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {   
+                        var societyID = reader.GetInt32(0);
+                        var societyName = reader.GetString(1);
+                        var societyDescription = reader.GetString(2);
+                        var societyType = reader.GetString(3);
+                        var societySupervisor = reader.GetString(4);
+                        var societySupervisorContact = reader.GetString(5);
+                        var societySupervisorEmail = reader.GetString(6);
+                        var societySupervisorDesignation = reader.GetString(7);
+                        var societySupervisorDepartment = reader.GetString(8);
+                        var societyLogo = reader.GetString(9);
+                        var isApproved = reader.GetBoolean(10);
+                        society = new Society(societyLogo, societyName, societyDescription, societyType, societySupervisor, societySupervisorContact, societySupervisorEmail, societySupervisorDesignation, societySupervisorDepartment, isApproved);
+                        society.SocietyId = societyID;
                     }
                 }
             }

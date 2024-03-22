@@ -9,13 +9,11 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtEmail; // Added email field
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnLogin; // Added login button
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label lblEmail; // Added email label
 
         /// <summary>
         /// Clean up any resources being used.
@@ -38,69 +36,117 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-
-            // Id Label
-            this.lblId = new System.Windows.Forms.Label();
-            this.lblId.Text = "Id";
-            this.lblId.Location = new System.Drawing.Point(50, 50);
-            this.Controls.Add(this.lblId);
-
-            // Id TextBox
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.txtId.Location = new System.Drawing.Point(150, 50);
-            this.Controls.Add(this.txtId);
-
-            // Username Label
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.lblUsername.Text = "Username";
-            this.lblUsername.Location = new System.Drawing.Point(50, 100);
-            this.Controls.Add(this.lblUsername);
-
-            // Username TextBox
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtUsername.Location = new System.Drawing.Point(150, 100);
-            this.Controls.Add(this.txtUsername);
-
-            // Password Label
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.lblPassword.Text = "Password";
-            this.lblPassword.Location = new System.Drawing.Point(50, 150);
-            this.Controls.Add(this.lblPassword);
-
-            // Password TextBox
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtPassword.Location = new System.Drawing.Point(150, 150);
-            this.Controls.Add(this.txtPassword);
-
-            // Email Label
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblEmail.Text = "Email";
-            this.lblEmail.Location = new System.Drawing.Point(50, 200);
-            this.Controls.Add(this.lblEmail);
-
-            // Email TextBox
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtEmail.Location = new System.Drawing.Point(150, 200);
-            this.Controls.Add(this.txtEmail);
-
-            // Register Button
-            this.btnRegister = new System.Windows.Forms.Button();
-            this.btnRegister.Text = "Register";
-            this.btnRegister.Location = new System.Drawing.Point(150, 250);
-            this.Controls.Add(this.btnRegister);
-
-            // Login Button
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.btnLogin.Text = "Login";
-            this.btnLogin.Location = new System.Drawing.Point(250, 250);
-            this.Controls.Add(this.btnLogin);
-
-            this.Text = "UserRegisterView";
+            lblId = new Label();
+            txtId = new TextBox();
+            lblUsername = new Label();
+            txtUsername = new TextBox();
+            lblPassword = new Label();
+            txtPassword = new TextBox();
+            btnRegister = new Button();
+            btnLogin = new Button();
+            label1 = new Label();
+            SuspendLayout();
+            // 
+            // lblId
+            // 
+            lblId.Font = new Font("Segoe UI", 12F);
+            lblId.Location = new Point(69, 86);
+            lblId.Name = "lblId";
+            lblId.Size = new Size(100, 23);
+            lblId.TabIndex = 0;
+            lblId.Text = "Id";
+            // 
+            // txtId
+            // 
+            txtId.Font = new Font("Segoe UI", 12F);
+            txtId.Location = new Point(69, 112);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(404, 29);
+            txtId.TabIndex = 1;
+            // 
+            // lblUsername
+            // 
+            lblUsername.Font = new Font("Segoe UI", 12F);
+            lblUsername.Location = new Point(69, 144);
+            lblUsername.Name = "lblUsername";
+            lblUsername.Size = new Size(100, 23);
+            lblUsername.TabIndex = 2;
+            lblUsername.Text = "Username";
+            // 
+            // txtUsername
+            // 
+            txtUsername.Font = new Font("Segoe UI", 12F);
+            txtUsername.Location = new Point(69, 170);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(404, 29);
+            txtUsername.TabIndex = 3;
+            // 
+            // lblPassword
+            // 
+            lblPassword.Font = new Font("Segoe UI", 12F);
+            lblPassword.Location = new Point(69, 219);
+            lblPassword.Name = "lblPassword";
+            lblPassword.Size = new Size(100, 23);
+            lblPassword.TabIndex = 4;
+            lblPassword.Text = "Password";
+            // 
+            // txtPassword
+            // 
+            txtPassword.Font = new Font("Segoe UI", 12F);
+            txtPassword.Location = new Point(69, 245);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(404, 29);
+            txtPassword.TabIndex = 5;
+            // 
+            // btnRegister
+            // 
+            btnRegister.Font = new Font("Segoe UI", 12F);
+            btnRegister.Location = new Point(69, 300);
+            btnRegister.Name = "btnRegister";
+            btnRegister.Size = new Size(404, 29);
+            btnRegister.TabIndex = 8;
+            btnRegister.Text = "Register";
+            // 
+            // btnLogin
+            // 
+            btnLogin.Font = new Font("Segoe UI", 12F);
+            btnLogin.Location = new Point(69, 352);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(404, 29);
+            btnLogin.TabIndex = 9;
+            btnLogin.Text = "Login";
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(253, 53);
+            label1.TabIndex = 10;
+            label1.Text = "Register";
+            // 
+            // UserRegisterView
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(556, 450);
+            Controls.Add(label1);
+            Controls.Add(lblId);
+            Controls.Add(txtId);
+            Controls.Add(lblUsername);
+            Controls.Add(txtUsername);
+            Controls.Add(lblPassword);
+            Controls.Add(txtPassword);
+            Controls.Add(btnRegister);
+            Controls.Add(btnLogin);
+            Name = "UserRegisterView";
+            Text = "UserRegisterView";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
     }
 }

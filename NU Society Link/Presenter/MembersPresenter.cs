@@ -15,7 +15,7 @@ namespace NU_Society_Link.Presenter
     {
         private MembersView view;
 
-            SocietyMembersDBHandler societyMembersDBHandler;
+        SocietyMembersDBHandler societyMembersDBHandler;
 
         
         private User user;
@@ -25,9 +25,6 @@ namespace NU_Society_Link.Presenter
             this.view = view;
             this.user = u;
             societyMembersDBHandler = new SocietyMembersDBHandler();
-            Debug.WriteLine("User" + user.Id);
-
-
             
             this.view.SearchMembers += SearchMembers;
             this.view.AddMember += AddNewMember;
@@ -43,6 +40,9 @@ namespace NU_Society_Link.Presenter
             if(member.MemberPosition == "President")
             {
                 view.SetWarning = "BABOOOFA";
+                AddMemberView addMemberView = new AddMemberView();
+                AddMemberPresenter addMemberPresenter = new AddMemberPresenter(addMemberView);
+                addMemberView.Show();
             }
             else
             {
