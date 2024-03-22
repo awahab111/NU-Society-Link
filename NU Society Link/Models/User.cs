@@ -25,5 +25,6 @@ namespace NU_Society_Link.Models
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
         public bool isAdmin { get => isadmin; set => isadmin = value; }
+
     }
 }

@@ -121,5 +121,12 @@ namespace NU_Society_Link.View
             }
             return instance;
         }
+
+        public void Delete()
+        {
+            this.Dispose();
+            instance = null;
+            this.Close();
+        }
     }
 }

@@ -21,6 +21,11 @@ namespace NU_Society_Link.Presenter
             this.view.Show();
         }
 
+        internal void Dispose()
+        {
+            view.Dispose();
+        }
+
         private void SaveSociety(object? sender, EventArgs e)
         {
             var logoBase64 = view.GetLogoBase64();

@@ -38,7 +38,31 @@ CREATE TABLE Society (
 
 drop table Society
 
+delete society
+
 select * from Society
 
 INSERT INTO Society (SocietyName, SocietyDescription, SocietyType, SocietySupervisor, SocietySupervisorContact, SocietySupervisorEmail, SocietySupervisorDesignation, SocietySupervisorDepartment, SocietyLogoBase64, isApproved)
 VALUES ('bhbhrb Society', 'This is a test society.', 'Type1', 'John Doe', '1234567890', 'john.doe@example.com', 'Supervisor', 'Department1','NONE', 0);
+
+CREATE TABLE SocietyMembers (
+    RollNum VARCHAR(4) PRIMARY KEY,
+    SocietyId INT,
+    MemberName VARCHAR(255),
+    MemberEmail VARCHAR(255),
+    MemberContact VARCHAR(255),
+	MemberPosition VARCHAR(255),
+	MemberBatch VARCHAR(4),
+    FOREIGN KEY (SocietyId) REFERENCES Society(SocietyId),
+	FOREIGN KEY (RollNum) REFERENCES Users(RollNumber)
+);
+
+select * from SocietyMembers
+
+delete SocietyMembers
+
+INSERT INTO SocietyMembers (RollNum, SocietyId, MemberName, MemberEmail, MemberContact, MemberPosition, MemberBatch)
+VALUES ('1001', 6, 'John Doe', 'john.doe@example.com', '1234567890', 'President', '2022'),
+       ('1002', 6, 'Jane Smith', 'jane.smith@example.com', '0987654321', 'President', '2022'),
+       ('3456', 2, 'Bob Johnson', 'bob.johnson@example.com', '1122334455', 'Secretary', '2023'),
+       ('4567', 2, 'Alice Williams', 'alice.williams@example.com', '5566778899', 'Treasurer', '2023');

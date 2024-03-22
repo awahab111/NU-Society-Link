@@ -32,7 +32,7 @@ namespace NU_Society_Link.Presenter
         private void ShowMainView(object? sender, EventArgs e)
         {
             MainView mainView = new MainView();
-            MainPresenter mainPresenter = new MainPresenter(mainView); // Use the appropriate constructor for MainPresenter
+            MainPresenter mainPresenter = new MainPresenter(mainView, userDBHandler.GetUser(loginView.Username, loginView.Password)); // Use the appropriate constructor for MainPresenter
             mainView.Show();
             this.view.Hide();
         }

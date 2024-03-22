@@ -4,6 +4,7 @@
     {
         private System.Windows.Forms.Panel leftPanel;
         private System.Windows.Forms.Button AddSocietybtn;
+        private System.Windows.Forms.Button Membersbtn; // Added button for Members
 
         /// <summary>
         /// Required designer variable.
@@ -33,6 +34,7 @@
         {
             leftPanel = new Panel();
             AddSocietybtn = new Button();
+            Membersbtn = new Button();
             leftPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -40,6 +42,7 @@
             // 
             leftPanel.BackColor = Color.LightGray;
             leftPanel.Controls.Add(AddSocietybtn);
+            leftPanel.Controls.Add(Membersbtn);
             leftPanel.Dock = DockStyle.Left;
             leftPanel.Location = new Point(0, 0);
             leftPanel.Name = "leftPanel";
@@ -53,6 +56,14 @@
             AddSocietybtn.Size = new Size(197, 23);
             AddSocietybtn.TabIndex = 0;
             AddSocietybtn.Text = "Add Society";
+            // 
+            // Membersbtn
+            // 
+            Membersbtn.Location = new Point(0, 112);
+            Membersbtn.Name = "Membersbtn";
+            Membersbtn.Size = new Size(197, 23);
+            Membersbtn.TabIndex = 1;
+            Membersbtn.Text = "Members";
             // 
             // MainView
             // 
