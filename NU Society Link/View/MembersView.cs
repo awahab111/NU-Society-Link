@@ -31,6 +31,7 @@ namespace NU_Society_Link.View
             InitializeComponent();
             btnSearch.Click += delegate { SearchMembers?.DynamicInvoke(this, EventArgs.Empty); };
             btnAddMember.Click += delegate { AddMember?.DynamicInvoke(this, EventArgs.Empty); };
+            
         }
 
         private static MembersView? instance;

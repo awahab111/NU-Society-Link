@@ -52,6 +52,11 @@ namespace NU_Society_Link.View
             return instance;
         }
 
+        public void DeleteInstance()
+        {
+            instance = null;
+        }
+
 
     }
 }

@@ -23,7 +23,6 @@ namespace NU_Society_Link.View
         {
             InitializeComponent();
             Load += delegate{ LoadPage?.Invoke(this, EventArgs.Empty); };
-            closeButton.Click += delegate { ClosePage?.Invoke(this, EventArgs.Empty);};
             approveSocietyBtn.Click += delegate { ApproveSociety?.Invoke(this, EventArgs.Empty); };
         }
 

@@ -16,6 +16,9 @@ namespace NU_Society_Link.View
         {
             InitializeComponent();
             
+
         }
+
+
     }
 }
