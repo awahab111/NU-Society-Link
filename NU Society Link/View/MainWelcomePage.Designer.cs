@@ -55,88 +55,96 @@
             // lblGreeting
             // 
             lblGreeting.AutoSize = true;
-            lblGreeting.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblGreeting.Location = new Point(12, 9);
+            lblGreeting.Font = new Font("Bahnschrift SemiBold SemiConden", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblGreeting.Location = new Point(389, 9);
             lblGreeting.Name = "lblGreeting";
-            lblGreeting.Size = new Size(129, 21);
+            lblGreeting.Size = new Size(182, 34);
             lblGreeting.TabIndex = 0;
             lblGreeting.Text = "Welcome, User!";
             // 
             // lblPersonalInfo
             // 
             lblPersonalInfo.AutoSize = true;
-            lblPersonalInfo.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblPersonalInfo.Location = new Point(12, 39);
+            lblPersonalInfo.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold);
+            lblPersonalInfo.Location = new Point(16, 57);
             lblPersonalInfo.Name = "lblPersonalInfo";
-            lblPersonalInfo.Size = new Size(172, 21);
+            lblPersonalInfo.Size = new Size(156, 22);
             lblPersonalInfo.TabIndex = 1;
             lblPersonalInfo.Text = "Personal Information";
             // 
             // lblName
             // 
             lblName.AutoSize = true;
-            lblName.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lblName.Location = new Point(12, 69);
+            lblName.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold);
+            lblName.Location = new Point(16, 101);
             lblName.Name = "lblName";
-            lblName.Size = new Size(46, 15);
+            lblName.Size = new Size(57, 22);
             lblName.TabIndex = 2;
             lblName.Text = "Name: ";
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lblEmail.Location = new Point(12, 99);
+            lblEmail.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold);
+            lblEmail.Location = new Point(16, 145);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(42, 15);
+            lblEmail.Size = new Size(57, 22);
             lblEmail.TabIndex = 3;
             lblEmail.Text = "Email: ";
             // 
             // lblPhone
             // 
             lblPhone.AutoSize = true;
-            lblPhone.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lblPhone.Location = new Point(12, 129);
+            lblPhone.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold);
+            lblPhone.Location = new Point(16, 189);
             lblPhone.Name = "lblPhone";
-            lblPhone.Size = new Size(48, 15);
+            lblPhone.Size = new Size(62, 22);
             lblPhone.TabIndex = 4;
             lblPhone.Text = "Phone: ";
             // 
             // lblPosition
             // 
             lblPosition.AutoSize = true;
-            lblPosition.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lblPosition.Location = new Point(12, 159);
+            lblPosition.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F);
+            lblPosition.Location = new Point(16, 233);
             lblPosition.Name = "lblPosition";
-            lblPosition.Size = new Size(57, 15);
+            lblPosition.Size = new Size(73, 22);
             lblPosition.TabIndex = 5;
             lblPosition.Text = "Position: ";
             // 
             // lblBatch
             // 
             lblBatch.AutoSize = true;
-            lblBatch.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lblBatch.Location = new Point(12, 189);
+            lblBatch.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F);
+            lblBatch.Location = new Point(16, 277);
             lblBatch.Name = "lblBatch";
-            lblBatch.Size = new Size(45, 15);
+            lblBatch.Size = new Size(58, 22);
             lblBatch.TabIndex = 6;
             lblBatch.Text = "Batch: ";
             // 
             // btnNotifications
             // 
-            btnNotifications.Location = new Point(642, 189);
+            btnNotifications.BackColor = Color.FromArgb(4, 59, 72);
+            btnNotifications.Cursor = Cursors.Hand;
+            btnNotifications.FlatStyle = FlatStyle.Popup;
+            btnNotifications.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold);
+            btnNotifications.Location = new Point(826, 277);
+            btnNotifications.Margin = new Padding(3, 4, 3, 4);
             btnNotifications.Name = "btnNotifications";
-            btnNotifications.Size = new Size(120, 30);
+            btnNotifications.Size = new Size(154, 44);
             btnNotifications.TabIndex = 7;
             btnNotifications.Text = "Clear Notifications";
-            btnNotifications.UseVisualStyleBackColor = true;
+            btnNotifications.UseVisualStyleBackColor = false;
             // 
             // listViewNotifications
             // 
+            listViewNotifications.BackColor = Color.FromArgb(7, 72, 85);
             listViewNotifications.Columns.AddRange(new ColumnHeader[] { head1, header2 });
-            listViewNotifications.Location = new Point(12, 225);
+            listViewNotifications.ForeColor = Color.WhiteSmoke;
+            listViewNotifications.Location = new Point(16, 330);
+            listViewNotifications.Margin = new Padding(3, 4, 3, 4);
             listViewNotifications.Name = "listViewNotifications";
-            listViewNotifications.Size = new Size(750, 222);
+            listViewNotifications.Size = new Size(964, 324);
             listViewNotifications.TabIndex = 8;
             listViewNotifications.UseCompatibleStateImageBehavior = false;
             listViewNotifications.View = System.Windows.Forms.View.Details;
@@ -153,9 +161,10 @@
             // 
             // MainWelcomePage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(774, 426);
+            BackColor = Color.FromArgb(12, 116, 137);
+            ClientSize = new Size(996, 625);
             Controls.Add(lblGreeting);
             Controls.Add(lblPersonalInfo);
             Controls.Add(lblName);
@@ -165,6 +174,9 @@
             Controls.Add(lblBatch);
             Controls.Add(btnNotifications);
             Controls.Add(listViewNotifications);
+            Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F);
+            ForeColor = Color.WhiteSmoke;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "MainWelcomePage";
             Text = "MainWelcomePage";
             ResumeLayout(false);

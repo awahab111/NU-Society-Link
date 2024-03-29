@@ -17,45 +17,58 @@ namespace NU_Society_Link.View
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ApproveSocietyView";
-
-            // Create the list view
-            this.societyListView = new ListView();
-            this.societyListView.Location = new System.Drawing.Point(10, 10);
-            this.societyListView.Size = new System.Drawing.Size(780, 400);
-            this.societyListView.View = System.Windows.Forms.View.Details;
-            this.societyListView.FullRowSelect = true;
-
-            // Create the columns
-            this.societyIdColumn = new ColumnHeader();
-            this.societyIdColumn.Text = "ID";
-            this.societyIdColumn.Width = 200;
-
-            this.societyNameColumn = new ColumnHeader();
-            this.societyNameColumn.Text = "Society Name";
-            this.societyNameColumn.Width = 200;
-
-            this.supervisorNameColumn = new ColumnHeader();
-            this.supervisorNameColumn.Text = "Supervisor Name";
-            this.supervisorNameColumn.Width = 200;
-
-            this.societyDescriptionColumn = new ColumnHeader();
-            this.societyDescriptionColumn.Text = "Description";
-            this.societyDescriptionColumn.Width = 200;
-
-            // Add the columns to the list view
-            this.societyListView.Columns.Add(this.societyIdColumn);
-            this.societyListView.Columns.Add(this.societyNameColumn);
-            this.societyListView.Columns.Add(this.supervisorNameColumn);
-            this.societyListView.Columns.Add(this.societyDescriptionColumn);
-
-            // Add the list view to the form
-            this.Controls.Add(this.societyListView);
+            societyListView = new ListView();
+            societyIdColumn = new ColumnHeader();
+            societyNameColumn = new ColumnHeader();
+            supervisorNameColumn = new ColumnHeader();
+            societyDescriptionColumn = new ColumnHeader();
+            SuspendLayout();
+            // 
+            // societyListView
+            // 
+            societyListView.BackColor = Color.FromArgb(7, 72, 85);
+            societyListView.BorderStyle = BorderStyle.FixedSingle;
+            societyListView.Columns.AddRange(new ColumnHeader[] { societyIdColumn, societyNameColumn, supervisorNameColumn, societyDescriptionColumn });
+            societyListView.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold);
+            societyListView.ForeColor = Color.WhiteSmoke;
+            societyListView.FullRowSelect = true;
+            societyListView.Location = new Point(10, 10);
+            societyListView.Name = "societyListView";
+            societyListView.Size = new Size(780, 400);
+            societyListView.TabIndex = 0;
+            societyListView.UseCompatibleStateImageBehavior = false;
+            societyListView.View = System.Windows.Forms.View.Details;
+            // 
+            // societyIdColumn
+            // 
+            societyIdColumn.Text = "ID";
+            societyIdColumn.Width = 200;
+            // 
+            // societyNameColumn
+            // 
+            societyNameColumn.Text = "Society Name";
+            societyNameColumn.Width = 200;
+            // 
+            // supervisorNameColumn
+            // 
+            supervisorNameColumn.Text = "Supervisor Name";
+            supervisorNameColumn.Width = 200;
+            // 
+            // societyDescriptionColumn
+            // 
+            societyDescriptionColumn.Text = "Description";
+            societyDescriptionColumn.Width = 200;
+            // 
+            // ApproveSocietyView
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(12, 116, 137);
+            ClientSize = new Size(800, 450);
+            Controls.Add(societyListView);
+            Name = "ApproveSocietyView";
+            Text = "Approve Society";
+            ResumeLayout(false);
         }
-
-
     }
 }

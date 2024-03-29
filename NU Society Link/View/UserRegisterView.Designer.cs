@@ -9,12 +9,15 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtEmail; // Added email field
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnLogin; // Added login button
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPassword;
-
+        private System.Windows.Forms.Label lblEmail; // Added email label
+        private System.Windows.Forms.Label label1; // Added email label
+        
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -49,87 +52,103 @@
             // 
             // lblId
             // 
-            lblId.Font = new Font("Segoe UI", 12F);
-            lblId.Location = new Point(69, 86);
+            lblId.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblId.ForeColor = Color.WhiteSmoke;
+            lblId.Location = new Point(69, 74);
             lblId.Name = "lblId";
-            lblId.Size = new Size(100, 23);
+            lblId.Size = new Size(100, 20);
             lblId.TabIndex = 0;
             lblId.Text = "Id";
             // 
             // txtId
             // 
             txtId.Font = new Font("Segoe UI", 12F);
-            txtId.Location = new Point(69, 112);
+            txtId.Location = new Point(69, 97);
             txtId.Name = "txtId";
-            txtId.Size = new Size(404, 29);
+            txtId.Size = new Size(404, 34);
             txtId.TabIndex = 1;
             // 
             // lblUsername
             // 
-            lblUsername.Font = new Font("Segoe UI", 12F);
-            lblUsername.Location = new Point(69, 144);
+            lblUsername.Font = new Font("Bahnschrift SemiCondensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblUsername.ForeColor = Color.WhiteSmoke;
+            lblUsername.Location = new Point(69, 134);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(100, 23);
+            lblUsername.Size = new Size(100, 20);
             lblUsername.TabIndex = 2;
             lblUsername.Text = "Username";
             // 
             // txtUsername
             // 
             txtUsername.Font = new Font("Segoe UI", 12F);
-            txtUsername.Location = new Point(69, 170);
+            txtUsername.Location = new Point(69, 157);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(404, 29);
+            txtUsername.Size = new Size(404, 34);
             txtUsername.TabIndex = 3;
             // 
             // lblPassword
             // 
-            lblPassword.Font = new Font("Segoe UI", 12F);
-            lblPassword.Location = new Point(69, 219);
+            lblPassword.Font = new Font("Bahnschrift SemiBold Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPassword.ForeColor = Color.WhiteSmoke;
+            lblPassword.Location = new Point(69, 194);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(100, 23);
+            lblPassword.Size = new Size(100, 20);
             lblPassword.TabIndex = 4;
             lblPassword.Text = "Password";
             // 
             // txtPassword
             // 
             txtPassword.Font = new Font("Segoe UI", 12F);
-            txtPassword.Location = new Point(69, 245);
+            txtPassword.Location = new Point(69, 217);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(404, 29);
+            txtPassword.Size = new Size(404, 34);
             txtPassword.TabIndex = 5;
+            txtPassword.UseSystemPasswordChar = true;
             // 
             // btnRegister
             // 
-            btnRegister.Font = new Font("Segoe UI", 12F);
-            btnRegister.Location = new Point(69, 300);
+            btnRegister.BackColor = Color.FromArgb(4, 59, 72);
+            btnRegister.Cursor = Cursors.Hand;
+            btnRegister.FlatStyle = FlatStyle.Popup;
+            btnRegister.Font = new Font("Bahnschrift SemiBold SemiConden", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegister.ForeColor = Color.WhiteSmoke;
+            btnRegister.Location = new Point(69, 284);
             btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(404, 29);
+            btnRegister.Size = new Size(404, 42);
             btnRegister.TabIndex = 8;
             btnRegister.Text = "Register";
+            btnRegister.UseVisualStyleBackColor = false;
             // 
             // btnLogin
             // 
-            btnLogin.Font = new Font("Segoe UI", 12F);
-            btnLogin.Location = new Point(69, 352);
+            btnLogin.BackColor = Color.FromArgb(4, 59, 72);
+            btnLogin.Cursor = Cursors.Hand;
+            btnLogin.FlatStyle = FlatStyle.Popup;
+            btnLogin.Font = new Font("Bahnschrift SemiBold SemiConden", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogin.ForeColor = Color.WhiteSmoke;
+            btnLogin.Location = new Point(69, 332);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(404, 29);
+            btnLogin.Size = new Size(404, 42);
             btnLogin.TabIndex = 9;
             btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
-            label1.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(12, 9);
+            label1.Font = new Font("Bahnschrift SemiBold", 28.2F, FontStyle.Bold);
+            label1.ForeColor = Color.WhiteSmoke;
+            label1.Location = new Point(12, 8);
             label1.Name = "label1";
-            label1.Size = new Size(253, 53);
+            label1.Size = new Size(211, 66);
             label1.TabIndex = 10;
             label1.Text = "Register";
             // 
             // UserRegisterView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(556, 450);
+            BackColor = Color.FromArgb(12, 116, 137);
+            ClientSize = new Size(556, 386);
             Controls.Add(label1);
             Controls.Add(lblId);
             Controls.Add(txtId);
@@ -139,6 +158,7 @@
             Controls.Add(txtPassword);
             Controls.Add(btnRegister);
             Controls.Add(btnLogin);
+            Font = new Font("Bahnschrift", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "UserRegisterView";
             Text = "UserRegisterView";
             ResumeLayout(false);
@@ -146,7 +166,5 @@
         }
 
         #endregion
-
-        private Label label1;
     }
 }
