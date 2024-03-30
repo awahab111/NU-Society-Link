@@ -29,8 +29,8 @@ namespace NU_Society_Link.View
             societyListView.Items.Clear();
             foreach (Society society in societies)
             {
-                if (society.IsApproved) continue;
-                ListViewItem item = new ListViewItem(society.SocietyId.ToString());
+                if (society.isApproved) continue;
+                ListViewItem item = new ListViewItem(society.societyID.ToString());
                 item.SubItems.Add(society.SocietyName);
                 item.SubItems.Add(society.SocietySupervisor);
                 item.SubItems.Add(society.SocietyDescription);

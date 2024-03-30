@@ -1,7 +1,7 @@
 CREATE DATABASE SMS
 use SMS
 use master
-DROP DATABASE SMS
+--drop database SMS
 
 
 CREATE TABLE Users (
@@ -11,7 +11,6 @@ CREATE TABLE Users (
     isAdmin BIT
 );
 
-drop table Users
 
 INSERT INTO Users (RollNumber, Username, Password, isAdmin) VALUES
 ('1001', 'admin', 'admin', 1),
@@ -20,13 +19,14 @@ INSERT INTO Users (RollNumber, Username, Password, isAdmin) VALUES
 ('1004', 'user4', 'passwordhash4' ,0);
 
 
-
+ 
 SELECT * FROM users WHERE username = '1' AND password = '1'
 select * from users
 
 
 CREATE TABLE Society (
     SocietyId INT IDENTITY(1,1) PRIMARY KEY,
+	SocietyPresident VARCHAR(4),
     SocietyName VARCHAR(255),
     SocietyDescription TEXT,
     SocietyType VARCHAR(255),
@@ -37,6 +37,7 @@ CREATE TABLE Society (
     SocietySupervisorDepartment VARCHAR(255),
     SocietyLogoBase64 TEXT,
 	IsApproved BIT Default 0
+	FOREIGN KEY (SocietyPresident) REFERENCES Users(RollNumber)
 );
 
 drop table Society
@@ -48,25 +49,35 @@ select * from Society where SocietyName= 'bhbhrb Society'
 INSERT INTO Society (SocietyName, SocietyDescription, SocietyType, SocietySupervisor, SocietySupervisorContact, SocietySupervisorEmail, SocietySupervisorDesignation, SocietySupervisorDepartment, SocietyLogoBase64, isApproved)
 VALUES ('eee Society', 'This is a test society.', 'Type1', 'John Doe', '1234567890', 'john.doe@example.com', 'Supervisor', 'Department1','NONE', 0);
 
+
+----------------------------------------------SocietyMembers
 CREATE TABLE SocietyMembers (
     RollNum VARCHAR(4) PRIMARY KEY,
     SocietyId INT,
-    MemberName VARCHAR(255),
-    MemberEmail VARCHAR(255),
-    MemberContact VARCHAR(255),
 	MemberPosition VARCHAR(255),
-	MemberBatch VARCHAR(4),
     FOREIGN KEY (SocietyId) REFERENCES Society(SocietyId),
 	FOREIGN KEY (RollNum) REFERENCES Users(RollNumber)
 );
 
 select * from SocietyMembers
 
-delete SocietyMembers
+INSERT INTO SocietyMembers (RollNum, SocietyId, MemberPosition)
+VALUES ('1001', 1, 'President'),
+       ('1002', 1, 'President');
 
-INSERT INTO SocietyMembers (RollNum, SocietyId, MemberName, MemberEmail, MemberContact, MemberPosition, MemberBatch)
-VALUES ('1001', 1, 'John Doe', 'john.doe@example.com', '1234567890', 'President', '2022'),
-       ('1002', 1, 'Jane Smith', 'jane.smith@example.com', '0987654321', 'President', '2022');
+select RollNum,SocietyId, Name, Email, contact, MemberPosition, batch from SocietyMembers 
+Inner join Students 
+on students.rollnumber = SocietyMembers.RollNum
+where SocietyMembers.RollNum = 1001
+
+
+
+drop table SocietyMembers
+
+delete SocietyMembers
+-------------------------------------------------
+
+
 
 
 CREATE TABLE Notifications (
@@ -85,3 +96,31 @@ VALUES ('1001', 'Your application has been approved.', 0),
        ('1002', 'Your application has been received.', 0);
 
 select * from Notifications
+
+UPDATE Notifications SET Seen = 0 WHERE UserId = 1002
+
+CREATE TABLE Students (
+    RollNumber VARCHAR(4) PRIMARY KEY,
+    Name VARCHAR(100),
+    Batch VARCHAR(4),
+    Email VARCHAR(100),
+    contact VARCHAR(100)
+	FOREIGN KEY (RollNumber) REFERENCES Users(RollNumber)
+);
+
+INSERT INTO Students (RollNumber, Name, Batch, Email, contact) 
+VALUES 
+(1001, 'John Doe', '2022', 'johndoe@example.com', '1234567890'),
+(1002, 'Jane Smith', '2023', 'janesmith@example.com', '0987654321'),
+(1003, 'Bob Johnson', '2022', 'bobjohnson@example.com', '1122334455'),
+(1004, 'Alice Williams', '2023', 'alicewilliams@example.com', '2233445566'),
+(5, 'Charlie Brown', '2022', 'charliebrown@example.com', '3344556677');
+
+drop table Students
+
+select * from students where rollNumber = 3
+
+ select  SocietyName,SocietyMembers.SocietyId, MemberPosition
+ from SocietyMembers
+ Inner join Society on Society.societyid = SocietyMembers.SocietyId
+ where SocietyMembers.rollnum= 1001

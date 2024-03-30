@@ -2,26 +2,25 @@
 {
     partial class UserRegisterView
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtEmail; // Added email field
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtContact;
+        private System.Windows.Forms.TextBox txtBatch;
+        private System.Windows.Forms.TextBox txtName; // Added TextBox for name input
         private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.Button btnLogin; // Added login button
+        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label lblEmail; // Added email label
-        private System.Windows.Forms.Label label1; // Added email label
-        
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblContact;
+        private System.Windows.Forms.Label lblBatch;
+        private System.Windows.Forms.Label lblName; // Added Label for name input
+        private System.Windows.Forms.Label label1;
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -31,12 +30,6 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             lblId = new Label();
@@ -45,16 +38,24 @@
             txtUsername = new TextBox();
             lblPassword = new Label();
             txtPassword = new TextBox();
+            lblEmail = new Label();
+            txtEmail = new TextBox();
+            lblContact = new Label();
+            txtContact = new TextBox();
+            lblBatch = new Label();
+            txtBatch = new TextBox();
             btnRegister = new Button();
             btnLogin = new Button();
             label1 = new Label();
+            lblName = new Label();
+            txtName = new TextBox();
             SuspendLayout();
             // 
             // lblId
             // 
             lblId.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblId.ForeColor = Color.WhiteSmoke;
-            lblId.Location = new Point(69, 74);
+            lblId.Location = new Point(39, 89);
             lblId.Name = "lblId";
             lblId.Size = new Size(100, 20);
             lblId.TabIndex = 0;
@@ -63,16 +64,16 @@
             // txtId
             // 
             txtId.Font = new Font("Segoe UI", 12F);
-            txtId.Location = new Point(69, 97);
+            txtId.Location = new Point(39, 112);
             txtId.Name = "txtId";
-            txtId.Size = new Size(404, 34);
+            txtId.Size = new Size(154, 29);
             txtId.TabIndex = 1;
             // 
             // lblUsername
             // 
             lblUsername.Font = new Font("Bahnschrift SemiCondensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblUsername.ForeColor = Color.WhiteSmoke;
-            lblUsername.Location = new Point(69, 134);
+            lblUsername.Location = new Point(39, 149);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(100, 20);
             lblUsername.TabIndex = 2;
@@ -81,16 +82,16 @@
             // txtUsername
             // 
             txtUsername.Font = new Font("Segoe UI", 12F);
-            txtUsername.Location = new Point(69, 157);
+            txtUsername.Location = new Point(39, 172);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(404, 34);
+            txtUsername.Size = new Size(293, 29);
             txtUsername.TabIndex = 3;
             // 
             // lblPassword
             // 
             lblPassword.Font = new Font("Bahnschrift SemiBold Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPassword.ForeColor = Color.WhiteSmoke;
-            lblPassword.Location = new Point(69, 194);
+            lblPassword.Location = new Point(39, 209);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(100, 20);
             lblPassword.TabIndex = 4;
@@ -99,11 +100,65 @@
             // txtPassword
             // 
             txtPassword.Font = new Font("Segoe UI", 12F);
-            txtPassword.Location = new Point(69, 217);
+            txtPassword.Location = new Point(39, 232);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(404, 34);
+            txtPassword.Size = new Size(293, 29);
             txtPassword.TabIndex = 5;
             txtPassword.UseSystemPasswordChar = true;
+            // 
+            // lblEmail
+            // 
+            lblEmail.Font = new Font("Bahnschrift SemiBold Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblEmail.ForeColor = Color.WhiteSmoke;
+            lblEmail.Location = new Point(391, 186);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(100, 20);
+            lblEmail.TabIndex = 6;
+            lblEmail.Text = "Email";
+            // 
+            // txtEmail
+            // 
+            txtEmail.Font = new Font("Segoe UI", 12F);
+            txtEmail.Location = new Point(391, 209);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(305, 29);
+            txtEmail.TabIndex = 7;
+            // 
+            // lblContact
+            // 
+            lblContact.Font = new Font("Bahnschrift SemiBold Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblContact.ForeColor = Color.WhiteSmoke;
+            lblContact.Location = new Point(391, 246);
+            lblContact.Name = "lblContact";
+            lblContact.Size = new Size(100, 20);
+            lblContact.TabIndex = 8;
+            lblContact.Text = "Contact";
+            // 
+            // txtContact
+            // 
+            txtContact.Font = new Font("Segoe UI", 12F);
+            txtContact.Location = new Point(391, 269);
+            txtContact.Name = "txtContact";
+            txtContact.Size = new Size(305, 29);
+            txtContact.TabIndex = 9;
+            // 
+            // lblBatch
+            // 
+            lblBatch.Font = new Font("Bahnschrift SemiBold Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBatch.ForeColor = Color.WhiteSmoke;
+            lblBatch.Location = new Point(39, 273);
+            lblBatch.Name = "lblBatch";
+            lblBatch.Size = new Size(100, 20);
+            lblBatch.TabIndex = 10;
+            lblBatch.Text = "Batch";
+            // 
+            // txtBatch
+            // 
+            txtBatch.Font = new Font("Segoe UI", 12F);
+            txtBatch.Location = new Point(39, 296);
+            txtBatch.Name = "txtBatch";
+            txtBatch.Size = new Size(154, 29);
+            txtBatch.TabIndex = 11;
             // 
             // btnRegister
             // 
@@ -112,10 +167,10 @@
             btnRegister.FlatStyle = FlatStyle.Popup;
             btnRegister.Font = new Font("Bahnschrift SemiBold SemiConden", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRegister.ForeColor = Color.WhiteSmoke;
-            btnRegister.Location = new Point(69, 284);
+            btnRegister.Location = new Point(391, 358);
             btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(404, 42);
-            btnRegister.TabIndex = 8;
+            btnRegister.Size = new Size(305, 42);
+            btnRegister.TabIndex = 12;
             btnRegister.Text = "Register";
             btnRegister.UseVisualStyleBackColor = false;
             // 
@@ -126,10 +181,10 @@
             btnLogin.FlatStyle = FlatStyle.Popup;
             btnLogin.Font = new Font("Bahnschrift SemiBold SemiConden", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogin.ForeColor = Color.WhiteSmoke;
-            btnLogin.Location = new Point(69, 332);
+            btnLogin.Location = new Point(39, 358);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(404, 42);
-            btnLogin.TabIndex = 9;
+            btnLogin.Size = new Size(293, 42);
+            btnLogin.TabIndex = 13;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
             // 
@@ -137,18 +192,36 @@
             // 
             label1.Font = new Font("Bahnschrift SemiBold", 28.2F, FontStyle.Bold);
             label1.ForeColor = Color.WhiteSmoke;
-            label1.Location = new Point(12, 8);
+            label1.Location = new Point(12, 9);
             label1.Name = "label1";
             label1.Size = new Size(211, 66);
-            label1.TabIndex = 10;
+            label1.TabIndex = 14;
             label1.Text = "Register";
+            // 
+            // lblName
+            // 
+            lblName.Font = new Font("Bahnschrift SemiBold Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblName.ForeColor = Color.WhiteSmoke;
+            lblName.Location = new Point(391, 112);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(100, 20);
+            lblName.TabIndex = 15;
+            lblName.Text = "Name";
+            // 
+            // txtName
+            // 
+            txtName.Font = new Font("Segoe UI", 12F);
+            txtName.Location = new Point(391, 135);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(305, 29);
+            txtName.TabIndex = 16;
             // 
             // UserRegisterView
             // 
-            AutoScaleDimensions = new SizeF(8F, 18F);
+            AutoScaleDimensions = new SizeF(7F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(12, 116, 137);
-            ClientSize = new Size(556, 386);
+            ClientSize = new Size(768, 463);
             Controls.Add(label1);
             Controls.Add(lblId);
             Controls.Add(txtId);
@@ -156,15 +229,21 @@
             Controls.Add(txtUsername);
             Controls.Add(lblPassword);
             Controls.Add(txtPassword);
+            Controls.Add(lblEmail);
+            Controls.Add(txtEmail);
+            Controls.Add(lblContact);
+            Controls.Add(txtContact);
+            Controls.Add(lblBatch);
+            Controls.Add(txtBatch);
             Controls.Add(btnRegister);
             Controls.Add(btnLogin);
+            Controls.Add(lblName);
+            Controls.Add(txtName);
             Font = new Font("Bahnschrift", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "UserRegisterView";
             Text = "UserRegisterView";
             ResumeLayout(false);
             PerformLayout();
         }
-
-        #endregion
     }
 }

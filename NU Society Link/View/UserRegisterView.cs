@@ -35,6 +35,20 @@ namespace NU_Society_Link.View
         public string Password { get => txtPassword.Text; set => throw new NotImplementedException(); }
         public int id { get => int.Parse(txtId.Text); set => throw new NotImplementedException(); }
 
+        public string Email { get => txtEmail.Text; set => throw new NotImplementedException(); }
+
+        public string Contact { get => txtContact.Text; set => throw new NotImplementedException(); }
+
+        public string Batch { get => txtBatch.Text; set => throw new NotImplementedException(); }
+
+        public string StudentName { get => txtName.Text; set => throw new NotImplementedException(); }
+
+
+        public void ShowMessage(string message)
+        {
+            MessageBox.Show(message);
+        }
+
         private static UserRegisterView? instance;
         public static UserRegisterView GetInstance(Form parentContainer)
         {

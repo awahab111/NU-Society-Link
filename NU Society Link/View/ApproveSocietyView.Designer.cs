@@ -32,9 +32,10 @@ namespace NU_Society_Link.View
             societyListView.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold);
             societyListView.ForeColor = Color.WhiteSmoke;
             societyListView.FullRowSelect = true;
-            societyListView.Location = new Point(10, 10);
+            societyListView.Location = new Point(9, 8);
+            societyListView.Margin = new Padding(3, 2, 3, 2);
             societyListView.Name = "societyListView";
-            societyListView.Size = new Size(780, 400);
+            societyListView.Size = new Size(683, 300);
             societyListView.TabIndex = 0;
             societyListView.UseCompatibleStateImageBehavior = false;
             societyListView.View = System.Windows.Forms.View.Details;
@@ -61,11 +62,12 @@ namespace NU_Society_Link.View
             // 
             // ApproveSocietyView
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(12, 116, 137);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(societyListView);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ApproveSocietyView";
             Text = "Approve Society";
             ResumeLayout(false);

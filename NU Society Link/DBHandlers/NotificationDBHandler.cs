@@ -45,6 +45,15 @@ namespace NU_Society_Link.DBHandlers
             return notifications;
         }
 
-
+        public void ClearNotifications(string v)
+        {
+            string query = $"UPDATE Notifications SET Seen = 1 WHERE UserId = @UserId";
+            using (var command = db.connection.CreateCommand())
+            {
+                command.CommandText = query;
+                command.Parameters.AddWithValue("@UserId", v);
+                command.ExecuteNonQuery();
+            }
+        }
     }
 }

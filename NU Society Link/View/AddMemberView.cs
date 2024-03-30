@@ -19,17 +19,18 @@ namespace NU_Society_Link.View
             btnAddMember.Click += delegate { AddMember?.Invoke(this, EventArgs.Empty); };
         }
 
-        public string GetMemberName => txtMemberName.Text;
-        public string GetMemberEmail => txtMemberEmail.Text;
-        public string GetMemberPhone => txtMemberContact.Text;
         public string GetMemberPosition => txtMemberPosition.Text;
-        public string GetMemberBatch => txtMemberBatch.Text;
         public string GetRollNum => txtRollNum.Text;
-        public string GetSocietyName => txtSocName.Text;
 
-        
+        public string flag
+        {
+            set
+            {
+                lblflag.Text = value;
+            }
+        }
 
-
+        public Label Flag => lblflag;
 
     }
 }

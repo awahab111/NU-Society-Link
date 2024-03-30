@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NU_Society_Link.View;
 using NU_Society_Link.DBHandlers;
+using NU_Society_Link.Models;
 
 namespace NU_Society_Link.Presenter
 {
@@ -14,8 +15,11 @@ namespace NU_Society_Link.Presenter
         
         SocietyMembersDBHandler societyMembersDBHandler;
 
-        public AddMemberPresenter(AddMemberView view)
+        SocietyMember member;
+
+        public AddMemberPresenter(AddMemberView view, SocietyMember m)
         {
+            this.member = m;
             this.view = view;
             societyMembersDBHandler = new SocietyMembersDBHandler();
             this.view.AddMember += AddMember;
@@ -24,15 +28,23 @@ namespace NU_Society_Link.Presenter
 
         private void AddMember(object? sender, EventArgs e)
         {
-            string memberName = view.GetMemberName;
-            string memberEmail = view.GetMemberEmail;
-            string memberPhone = view.GetMemberPhone;
             string memberPosition = view.GetMemberPosition;
-            string memberBatch = view.GetMemberBatch;
             string rollNum = view.GetRollNum;
-            string societyName = view.GetSocietyName;
 
-            societyMembersDBHandler.AddMember(memberName, memberEmail, memberPhone, memberPosition, memberBatch, rollNum, societyName);
+            if (!string.IsNullOrEmpty(memberPosition) && !string.IsNullOrEmpty(rollNum))
+            {
+                var flag = societyMembersDBHandler.AddMember(memberPosition, rollNum, this.member.SocietyId);
+                if (flag)
+                {
+                    view.Flag.ForeColor = System.Drawing.Color.Green;
+                    view.Flag.Text = "Member Added Successfully";
+                }
+                else
+                {
+                    view.Flag.ForeColor = System.Drawing.Color.Red;
+                    view.flag = "An Error Occurred. Please try again.";
+                }
+            }
         }
     }
 }

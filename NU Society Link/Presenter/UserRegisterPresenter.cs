@@ -24,7 +24,7 @@ namespace NU_Society_Link.Presenter
 
         private void createUser(object? sender, EventArgs e)
         {
-            model.AddUser(this.view.id, this.view.Username, this.view.Password);
+            model.AddUser(this.view.id, this.view.Username, this.view.Password, this.view.StudentName, this.view.Batch, this.view.Email, this.view.Contact);
             Debug.WriteLine("User created");
             this.view.Close();
         }

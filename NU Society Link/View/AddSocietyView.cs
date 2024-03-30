@@ -87,7 +87,6 @@ namespace NU_Society_Link.View
             set { pbLogo.ImageLocation = value; }
         }
 
-
         public string GetLogoBase64()
         {
             if (pbLogo.Image != null)
@@ -97,10 +96,21 @@ namespace NU_Society_Link.View
                     pbLogo.Image.Save(ms, pbLogo.Image.RawFormat);
                     byte[] imageBytes = ms.ToArray();
                     string base64String = Convert.ToBase64String(imageBytes);
-                    return $"data:image/{pbLogo.Image.RawFormat.ToString().ToLower()};base64,{base64String}";
+                    return base64String;
                 }
             }
-            return string.Empty;
+            return "NONE";
+        }
+
+        public string flag {
+            get { return flaglbl.Text; }
+            set { flaglbl.Text = value; }
+        }
+
+        public void success()
+        {
+            flaglbl.ForeColor = Color.Green;
+            flaglbl.Text = "Request Sent";
         }
 
 

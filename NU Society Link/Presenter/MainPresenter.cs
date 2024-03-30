@@ -44,7 +44,7 @@ namespace NU_Society_Link.Presenter
         {
             Clear();
             AddSocietyView addSocietyView = AddSocietyView.GetInstance(view);
-            addSocietyPresenter = new AddSocietyPresenter(addSocietyView); // Assign the variable
+            addSocietyPresenter = new AddSocietyPresenter(addSocietyView, user); // Assign the variable
             addSocietyView.BringToFront();
         }
 

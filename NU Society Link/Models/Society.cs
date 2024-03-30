@@ -8,44 +8,28 @@ namespace NU_Society_Link.Models
 {
     public class Society
     {
-        private int societyID;
-        private string societyName;
-        private string societyDescription;
-        private string societyType;
-        private string societySupervisor;
-        private string societySupervisorContact;
-        private string societySupervisorEmail;
-        private string? societySupervisorDesignation;
-        private string? societySupervisorDepartment;
-
-        private bool isApproved;
-
-        private string societyLogo;
-
-        public Society(string societylogo, string societyName, string societyDescription, string societyType,string societySupervisor, string societySupervisorContact, string societySupervisorEmail, string societySupervisorDesignation, string societySupervisorDepartment, bool isApproved)
+        public int societyID;
+        public string SocietyName;
+        public string SocietyDescription;
+        public string SocietyType;
+        public string SocietySupervisor;
+        public string SocietySupervisorEmail;
+        public string President;
+        public bool isApproved;
+        public string SocietyLogo;
+        public Society(int societyID, string societyName, string societyDescription, string societyType, string societySupervisor, string societySupervisorEmail, string President, bool isApproved, string societyLogo)
         {
-            this.societyName = societyName;
-            this.societyDescription = societyDescription;
-            this.societyType = societyType;
-            this.societySupervisor = societySupervisor;
-            this.societySupervisorContact = societySupervisorContact;
-            this.societySupervisorEmail = societySupervisorEmail;
-            this.societySupervisorDesignation = societySupervisorDesignation;
-            this.societySupervisorDepartment = societySupervisorDepartment;
-            this.societyLogo = societylogo;
+            this.societyID = societyID;
+            this.SocietyName = societyName;
+            this.SocietyDescription = societyDescription;
+            this.SocietyType = societyType;
+            this.SocietySupervisor = societySupervisor;
+            this.SocietySupervisorEmail = societySupervisorEmail;
+            this.President = President;
             this.isApproved = isApproved;
+            this.SocietyLogo = societyLogo;
         }
         
-        public int SocietyId { get => societyID; set => societyID = value; }
-        public string SocietyName { get => societyName; set => societyName = value; }
-        public string SocietyDescription { get => societyDescription; set => societyDescription = value; }
-        public string SocietyType { get => societyType; set => societyType = value; }
-        public string SocietySupervisor { get => societySupervisor; set => societySupervisor = value; }
-        public string SocietySupervisorContact { get => societySupervisorContact; set => societySupervisorContact = value; }
-        public string SocietySupervisorEmail { get => societySupervisorEmail; set => societySupervisorEmail = value; }
-        public string? SocietySupervisorDesignation { get => societySupervisorDesignation; set => societySupervisorDesignation = value; }
-        public string? SocietySupervisorDepartment { get => societySupervisorDepartment; set => societySupervisorDepartment = value; }
-        public string SocietyLogo { get => societyLogo; set => societyLogo = value; }
-        public bool IsApproved { get => isApproved; set => isApproved = value; }
+        
     }
 }

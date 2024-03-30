@@ -50,6 +50,7 @@
             lblSupervisorFaculty = new Label();
             txtSupervisorFaculty = new TextBox();
             txtDescription = new RichTextBox();
+            flaglbl = new Label();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
             SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             lblName.AutoSize = true;
             lblName.Location = new Point(20, 21);
             lblName.Name = "lblName";
-            lblName.Size = new Size(52, 21);
+            lblName.Size = new Size(42, 17);
             lblName.TabIndex = 0;
             lblName.Text = "Name:";
             // 
@@ -66,7 +67,7 @@
             // 
             txtName.Location = new Point(108, 14);
             txtName.Name = "txtName";
-            txtName.Size = new Size(200, 28);
+            txtName.Size = new Size(200, 24);
             txtName.TabIndex = 1;
             // 
             // lblSupervisor
@@ -74,7 +75,7 @@
             lblSupervisor.AutoSize = true;
             lblSupervisor.Location = new Point(20, 51);
             lblSupervisor.Name = "lblSupervisor";
-            lblSupervisor.Size = new Size(84, 21);
+            lblSupervisor.Size = new Size(68, 17);
             lblSupervisor.TabIndex = 2;
             lblSupervisor.Text = "Supervisor:";
             // 
@@ -82,7 +83,7 @@
             // 
             txtSupervisor.Location = new Point(108, 44);
             txtSupervisor.Name = "txtSupervisor";
-            txtSupervisor.Size = new Size(200, 28);
+            txtSupervisor.Size = new Size(200, 24);
             txtSupervisor.TabIndex = 3;
             // 
             // lblLogo
@@ -90,7 +91,7 @@
             lblLogo.AutoSize = true;
             lblLogo.Location = new Point(20, 81);
             lblLogo.Name = "lblLogo";
-            lblLogo.Size = new Size(45, 21);
+            lblLogo.Size = new Size(37, 17);
             lblLogo.TabIndex = 4;
             lblLogo.Text = "Logo:";
             // 
@@ -124,7 +125,7 @@
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(158, 26);
             btnSave.TabIndex = 7;
-            btnSave.Text = "Save";
+            btnSave.Text = "Done";
             btnSave.UseVisualStyleBackColor = false;
             // 
             // lblDescription
@@ -132,7 +133,7 @@
             lblDescription.AutoSize = true;
             lblDescription.Location = new Point(390, 182);
             lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(87, 21);
+            lblDescription.Size = new Size(72, 17);
             lblDescription.TabIndex = 8;
             lblDescription.Text = "Description:";
             // 
@@ -141,7 +142,7 @@
             lblType.AutoSize = true;
             lblType.Location = new Point(20, 118);
             lblType.Name = "lblType";
-            lblType.Size = new Size(42, 21);
+            lblType.Size = new Size(36, 17);
             lblType.TabIndex = 10;
             lblType.Text = "Type:";
             // 
@@ -149,7 +150,7 @@
             // 
             txtType.Location = new Point(108, 111);
             txtType.Name = "txtType";
-            txtType.Size = new Size(200, 28);
+            txtType.Size = new Size(200, 24);
             txtType.TabIndex = 11;
             // 
             // lblSupervisorContact
@@ -157,7 +158,7 @@
             lblSupervisorContact.AutoSize = true;
             lblSupervisorContact.Location = new Point(7, 164);
             lblSupervisorContact.Name = "lblSupervisorContact";
-            lblSupervisorContact.Size = new Size(139, 21);
+            lblSupervisorContact.Size = new Size(113, 17);
             lblSupervisorContact.TabIndex = 14;
             lblSupervisorContact.Text = "Supervisor Contact:";
             // 
@@ -165,7 +166,7 @@
             // 
             txtSupervisorContact.Location = new Point(180, 157);
             txtSupervisorContact.Name = "txtSupervisorContact";
-            txtSupervisorContact.Size = new Size(171, 28);
+            txtSupervisorContact.Size = new Size(171, 24);
             txtSupervisorContact.TabIndex = 15;
             // 
             // lblSupervisorEmail
@@ -173,7 +174,7 @@
             lblSupervisorEmail.AutoSize = true;
             lblSupervisorEmail.Location = new Point(7, 193);
             lblSupervisorEmail.Name = "lblSupervisorEmail";
-            lblSupervisorEmail.Size = new Size(126, 21);
+            lblSupervisorEmail.Size = new Size(103, 17);
             lblSupervisorEmail.TabIndex = 16;
             lblSupervisorEmail.Text = "Supervisor Email:";
             // 
@@ -181,7 +182,7 @@
             // 
             txtSupervisorEmail.Location = new Point(180, 186);
             txtSupervisorEmail.Name = "txtSupervisorEmail";
-            txtSupervisorEmail.Size = new Size(171, 28);
+            txtSupervisorEmail.Size = new Size(171, 24);
             txtSupervisorEmail.TabIndex = 17;
             // 
             // lblSupervisorDesignation
@@ -189,7 +190,7 @@
             lblSupervisorDesignation.AutoSize = true;
             lblSupervisorDesignation.Location = new Point(7, 221);
             lblSupervisorDesignation.Name = "lblSupervisorDesignation";
-            lblSupervisorDesignation.Size = new Size(166, 21);
+            lblSupervisorDesignation.Size = new Size(136, 17);
             lblSupervisorDesignation.TabIndex = 18;
             lblSupervisorDesignation.Text = "Supervisor Designation:";
             // 
@@ -197,7 +198,7 @@
             // 
             txtSupervisorDesignation.Location = new Point(180, 214);
             txtSupervisorDesignation.Name = "txtSupervisorDesignation";
-            txtSupervisorDesignation.Size = new Size(171, 28);
+            txtSupervisorDesignation.Size = new Size(171, 24);
             txtSupervisorDesignation.TabIndex = 19;
             // 
             // lblSupervisorDepartment
@@ -205,7 +206,7 @@
             lblSupervisorDepartment.AutoSize = true;
             lblSupervisorDepartment.Location = new Point(6, 250);
             lblSupervisorDepartment.Name = "lblSupervisorDepartment";
-            lblSupervisorDepartment.Size = new Size(167, 21);
+            lblSupervisorDepartment.Size = new Size(136, 17);
             lblSupervisorDepartment.TabIndex = 20;
             lblSupervisorDepartment.Text = "Supervisor Department:";
             // 
@@ -213,7 +214,7 @@
             // 
             txtSupervisorDepartment.Location = new Point(180, 243);
             txtSupervisorDepartment.Name = "txtSupervisorDepartment";
-            txtSupervisorDepartment.Size = new Size(171, 28);
+            txtSupervisorDepartment.Size = new Size(171, 24);
             txtSupervisorDepartment.TabIndex = 21;
             // 
             // lblSupervisorFaculty
@@ -221,7 +222,7 @@
             lblSupervisorFaculty.AutoSize = true;
             lblSupervisorFaculty.Location = new Point(7, 281);
             lblSupervisorFaculty.Name = "lblSupervisorFaculty";
-            lblSupervisorFaculty.Size = new Size(135, 21);
+            lblSupervisorFaculty.Size = new Size(111, 17);
             lblSupervisorFaculty.TabIndex = 22;
             lblSupervisorFaculty.Text = "Supervisor Faculty:";
             // 
@@ -229,7 +230,7 @@
             // 
             txtSupervisorFaculty.Location = new Point(180, 274);
             txtSupervisorFaculty.Name = "txtSupervisorFaculty";
-            txtSupervisorFaculty.Size = new Size(171, 28);
+            txtSupervisorFaculty.Size = new Size(171, 24);
             txtSupervisorFaculty.TabIndex = 23;
             // 
             // txtDescription
@@ -240,11 +241,23 @@
             txtDescription.TabIndex = 24;
             txtDescription.Text = "";
             // 
+            // flaglbl
+            // 
+            flaglbl.AutoSize = true;
+            flaglbl.BackColor = Color.White;
+            flaglbl.Font = new Font("Bahnschrift", 10F, FontStyle.Bold);
+            flaglbl.ForeColor = Color.OrangeRed;
+            flaglbl.Location = new Point(243, 353);
+            flaglbl.Name = "flaglbl";
+            flaglbl.Size = new Size(0, 17);
+            flaglbl.TabIndex = 25;
+            // 
             // AddSocietyView
             // 
             AutoSize = true;
             BackColor = Color.FromArgb(12, 116, 137);
             ClientSize = new Size(575, 403);
+            Controls.Add(flaglbl);
             Controls.Add(txtDescription);
             Controls.Add(lblName);
             Controls.Add(txtName);
@@ -288,6 +301,7 @@
         }
 
         private RichTextBox txtDescription;
+        private Label flaglbl;
 
         // ...
     }

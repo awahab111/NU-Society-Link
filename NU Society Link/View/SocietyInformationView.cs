@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NU_Society_Link.DBHandlers;
 using NU_Society_Link.Models;
 
 namespace NU_Society_Link.View
@@ -22,7 +23,7 @@ namespace NU_Society_Link.View
         private SocietyInformationView()
         {
             InitializeComponent();
-            Load += delegate{ LoadPage?.Invoke(this, EventArgs.Empty); };
+            Load += delegate { LoadPage?.Invoke(this, EventArgs.Empty); };
             approveSocietyBtn.Click += delegate { ApproveSociety?.Invoke(this, EventArgs.Empty); };
         }
 
@@ -39,15 +40,18 @@ namespace NU_Society_Link.View
             return instance;
         }
 
-        internal void updateInformation(Society society)
+        internal void updateInformation(Society society, Student s)
         {
-            showName.Text = society.SocietyName;
-            showDescription.Text = society.SocietyDescription;
+
+
+            socNamelbl.Text = society.SocietyName;
+            showDesc.Text = society.SocietyDescription;
             showSupervisor.Text = society.SocietySupervisor;
-            txtSupervisorContact.Text = society.SocietySupervisorContact;
-            txtSupervisorDepartment.Text = society.SocietySupervisorDepartment;
             txtSupervisorEmail.Text = society.SocietySupervisorEmail;
             txtType.Text = society.SocietyType;
+            presidentrolltxt.Text = s.RollNum;
+            presidentnametxt.Text = s.Name;
+
 
             if (society.SocietyLogo == "NONE")
             {
@@ -62,6 +66,11 @@ namespace NU_Society_Link.View
             }
 
             Debug.WriteLine("Information Updated");
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

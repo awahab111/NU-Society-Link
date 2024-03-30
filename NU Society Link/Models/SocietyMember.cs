@@ -6,25 +6,26 @@ using System.Threading.Tasks;
 
 namespace NU_Society_Link.Models
 {
-    public class SocietyMember
+    public class SocietyMember : Student
     {
-        public string RollNum { get; set; }
+        public new string RollNum { get; set; }
         public int SocietyId { get; set; }
-        public string MemberName { get; set; }
-        public string MemberEmail { get; set; }
-        public string MemberContact { get; set; }
         public string MemberPosition { get; set; }
-        public string MemberBatch { get; set; }
+        public string SocietyName { get; set; }
 
         public SocietyMember(string rollNum, int societyId, string memberName, string memberEmail, string memberContact, string memberPosition, string memberBatch)
+            : base(rollNum,memberName, memberEmail, memberContact, memberBatch)
         {
-            RollNum = rollNum;
             SocietyId = societyId;
-            MemberName = memberName;
-            MemberEmail = memberEmail;
-            MemberContact = memberContact;
             MemberPosition = memberPosition;
-            MemberBatch = memberBatch;
+        }
+
+        public SocietyMember(int societyId, Student student, string memberPosition, string sname)
+            : base(student.RollNum,student.Name, student.Email, student.Contact, student.Batch)
+        {
+            SocietyId = societyId;
+            SocietyName = sname;
+            MemberPosition = memberPosition;
         }
     }
 }

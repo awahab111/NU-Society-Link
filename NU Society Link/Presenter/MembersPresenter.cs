@@ -17,6 +17,11 @@ namespace NU_Society_Link.Presenter
 
         SocietyMembersDBHandler societyMembersDBHandler;
 
+        StudentsDBHandler StudentsDBHandler;
+
+        private Student s;
+
+        private SocietyMember member;
         
         private User user;
 
@@ -25,23 +30,42 @@ namespace NU_Society_Link.Presenter
             this.view = view;
             this.user = u;
             societyMembersDBHandler = new SocietyMembersDBHandler();
+            StudentsDBHandler = new StudentsDBHandler();
             
-            this.view.SearchMembers += SearchMembers;
-            this.view.AddMember += AddNewMember;
+            this.s = StudentsDBHandler.GetStudent((user.Id).ToString());
+            this.member = societyMembersDBHandler.GetMember(s);
+
+            if(member == null)
+            {
+                view.SetWarning = "WARNING: You are not a member of any society. You cannot view members.";
+            }
+            else
+            {
+                this.view.SearchMembers += SearchMembers;
+                this.view.AddMember += AddNewMember;
+                PopulateDataGridView();
+            }
+
             this.view.Show();
             this.view.BringToFront();
-            PopulateDataGridView();
         }
 
         private void AddNewMember(object? sender, EventArgs e)
         {
             Debug.WriteLine("Add Member Clicked");
-            SocietyMember member = societyMembersDBHandler.GetMember((user.Id).ToString());
-            if(member.MemberPosition == "President")
+            StudentsDBHandler studentsDBHandler = new StudentsDBHandler();
+            Student student = studentsDBHandler.GetStudent((user.Id).ToString());
+            SocietyMember member = societyMembersDBHandler.GetMember(student);
+            if (member == null)
             {
-                view.SetWarning = "BABOOOFA";
+                view.SetWarning = "WARNING: You are not a member of any society. You cannot add members.";
+                return;
+            }
+            if (member.MemberPosition == "President")
+            {
+                view.SetWarning = "";
                 AddMemberView addMemberView = new AddMemberView();
-                AddMemberPresenter addMemberPresenter = new AddMemberPresenter(addMemberView);
+                AddMemberPresenter addMemberPresenter = new AddMemberPresenter(addMemberView, member);
                 addMemberView.Show();
             }
             else
@@ -66,9 +90,9 @@ namespace NU_Society_Link.Presenter
 
             foreach (SocietyMember member in members)
             {
-                if (member.RollNum.Contains(search) || member.MemberName.Contains(search) || member.MemberPosition.Contains(search) || member.MemberBatch.Contains(search))
+                if (member.RollNum.Contains(search) || member.Name.Contains(search) || member.MemberPosition.Contains(search) || member.Batch.Contains(search))
                 {
-                    membersDataTable.Rows.Add(member.RollNum, member.MemberName, member.MemberPosition, member.MemberBatch);
+                    membersDataTable.Rows.Add(member.RollNum, member.Name, member.MemberPosition, member.Batch);
                 }
             }
             view.PopulateGridView(membersDataTable);
@@ -77,7 +101,7 @@ namespace NU_Society_Link.Presenter
 
         private List<SocietyMember> GetSocietyMembers()
         {
-            List<SocietyMember> members = societyMembersDBHandler.GetMembers();
+            List<SocietyMember> members = societyMembersDBHandler.GetMembers(this.member.SocietyId);
             return members;
         }
 
@@ -92,7 +116,7 @@ namespace NU_Society_Link.Presenter
 
             foreach (SocietyMember member in members)
             {
-                membersDataTable.Rows.Add(member.RollNum ,member.MemberName, member.MemberPosition, member.MemberBatch);
+                membersDataTable.Rows.Add(member.RollNum ,member.Name, member.MemberPosition, member.Batch);
             }
 
             view.PopulateGridView(membersDataTable);

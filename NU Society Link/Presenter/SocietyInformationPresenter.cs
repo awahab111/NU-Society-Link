@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NU_Society_Link.Models;
 using NU_Society_Link.View;
+using NU_Society_Link.DBHandlers;
 
 namespace NU_Society_Link.Presenter
 {
@@ -32,7 +33,11 @@ namespace NU_Society_Link.Presenter
             society = societyDBHandler.GetSociety(id);
             Debug.WriteLine("Society Information Loaded");
 
-            this.view.updateInformation(society);
+            StudentsDBHandler studentsDBHandler = new StudentsDBHandler();
+            Student student = studentsDBHandler.GetStudent(society.President);
+
+
+            this.view.updateInformation(society, student);
         }
 
         private void ApproveSociety(object? sender, EventArgs e, string societyId)

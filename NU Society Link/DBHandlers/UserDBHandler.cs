@@ -12,17 +12,30 @@ namespace NU_Society_Link.DBHandlers
     {
         Database db = Database.GetInstance;
 
-        public void AddUser(int id, string username, string password)
+        public void AddUser(int id, string username, string password, string name, string batch, string email, string contact)
         {
-            string query = "INSERT INTO users (RollNumber, username, password, isadmin) VALUES (@id, @username, @password, @isadmin)";
-            using (var command = db.connection.CreateCommand())
+            try
             {
-                command.CommandText = query;
-                command.Parameters.AddWithValue("@id", id);
-                command.Parameters.AddWithValue("@username", username);
-                command.Parameters.AddWithValue("@password", password);
-                command.Parameters.AddWithValue("@isadmin", 0);
-                command.ExecuteNonQuery();
+                string query = "INSERT INTO users (RollNumber, username, password, isadmin) VALUES (@id, @username, @password, @isadmin)";
+                using (var command = db.connection.CreateCommand())
+                {
+                    command.CommandText = query;
+                    command.Parameters.AddWithValue("@id", id);
+                    command.Parameters.AddWithValue("@username", username);
+                    command.Parameters.AddWithValue("@password", password);
+                    command.Parameters.AddWithValue("@isadmin", 0);
+                    command.ExecuteNonQuery();
+                }
+
+                StudentsDBHandler studentDBHandler = new StudentsDBHandler();
+
+                studentDBHandler.AddStudent(id, name, batch, email, contact);
+
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception here, e.g. log the error or throw a custom exception
+                Console.WriteLine("An error occurred while adding the user: " + ex.Message);
             }
         }
 

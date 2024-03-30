@@ -62,9 +62,8 @@ namespace NU_Society_Link.View
             leftPanel.Controls.Add(logoPictureBox);
             leftPanel.Dock = DockStyle.Left;
             leftPanel.Location = new Point(0, 0);
-            leftPanel.Margin = new Padding(3, 4, 3, 4);
             leftPanel.Name = "leftPanel";
-            leftPanel.Size = new Size(229, 748);
+            leftPanel.Size = new Size(201, 561);
             leftPanel.TabIndex = 0;
             // 
             // AddSocietybtn
@@ -74,10 +73,9 @@ namespace NU_Society_Link.View
             AddSocietybtn.FlatStyle = FlatStyle.Popup;
             AddSocietybtn.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             AddSocietybtn.ForeColor = Color.WhiteSmoke;
-            AddSocietybtn.Location = new Point(12, 110);
-            AddSocietybtn.Margin = new Padding(3, 4, 3, 4);
+            AddSocietybtn.Location = new Point(10, 82);
             AddSocietybtn.Name = "AddSocietybtn";
-            AddSocietybtn.Size = new Size(202, 31);
+            AddSocietybtn.Size = new Size(177, 23);
             AddSocietybtn.TabIndex = 0;
             AddSocietybtn.Text = "Add Society";
             AddSocietybtn.UseVisualStyleBackColor = false;
@@ -89,10 +87,9 @@ namespace NU_Society_Link.View
             Membersbtn.FlatStyle = FlatStyle.Popup;
             Membersbtn.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Membersbtn.ForeColor = Color.WhiteSmoke;
-            Membersbtn.Location = new Point(12, 184);
-            Membersbtn.Margin = new Padding(3, 4, 3, 4);
+            Membersbtn.Location = new Point(10, 138);
             Membersbtn.Name = "Membersbtn";
-            Membersbtn.Size = new Size(202, 31);
+            Membersbtn.Size = new Size(177, 23);
             Membersbtn.TabIndex = 1;
             Membersbtn.Text = "Members";
             Membersbtn.UseVisualStyleBackColor = false;
@@ -103,10 +100,9 @@ namespace NU_Society_Link.View
             Backbtn.FlatStyle = FlatStyle.Popup;
             Backbtn.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold);
             Backbtn.ForeColor = Color.WhiteSmoke;
-            Backbtn.Location = new Point(12, 701);
-            Backbtn.Margin = new Padding(3, 4, 3, 4);
+            Backbtn.Location = new Point(10, 526);
             Backbtn.Name = "Backbtn";
-            Backbtn.Size = new Size(202, 31);
+            Backbtn.Size = new Size(177, 23);
             Backbtn.TabIndex = 2;
             Backbtn.Text = "Back";
             Backbtn.UseVisualStyleBackColor = false;
@@ -117,10 +113,9 @@ namespace NU_Society_Link.View
             Logoutbtn.FlatStyle = FlatStyle.Popup;
             Logoutbtn.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold);
             Logoutbtn.ForeColor = Color.WhiteSmoke;
-            Logoutbtn.Location = new Point(12, 663);
-            Logoutbtn.Margin = new Padding(3, 4, 3, 4);
+            Logoutbtn.Location = new Point(10, 497);
             Logoutbtn.Name = "Logoutbtn";
-            Logoutbtn.Size = new Size(202, 31);
+            Logoutbtn.Size = new Size(177, 23);
             Logoutbtn.TabIndex = 3;
             Logoutbtn.Text = "Logout";
             Logoutbtn.UseVisualStyleBackColor = false;
@@ -129,21 +124,21 @@ namespace NU_Society_Link.View
             // 
             logoPictureBox.BorderStyle = BorderStyle.FixedSingle;
             logoPictureBox.Image = Properties.Resources.logo;
-            logoPictureBox.Location = new Point(28, 11);
+            logoPictureBox.Location = new Point(24, 8);
+            logoPictureBox.Margin = new Padding(3, 2, 3, 2);
             logoPictureBox.Name = "logoPictureBox";
-            logoPictureBox.Size = new Size(150, 55);
+            logoPictureBox.Size = new Size(132, 42);
             logoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             logoPictureBox.TabIndex = 4;
             logoPictureBox.TabStop = false;
             // 
             // MainView
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1125, 748);
+            ClientSize = new Size(984, 561);
             Controls.Add(leftPanel);
             IsMdiContainer = true;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "MainView";
             Text = "MainView";
             leftPanel.ResumeLayout(false);

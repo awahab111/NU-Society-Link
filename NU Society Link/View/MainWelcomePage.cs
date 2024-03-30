@@ -12,9 +12,13 @@ namespace NU_Society_Link.View
 {
     public partial class MainWelcomePage : Form
     {
+        public event EventHandler ClearNotifications;
+
         private MainWelcomePage()
         {
             InitializeComponent();
+            btnNotifications.Click += (sender, e) => ClearNotifications?.Invoke(this, e);
+
         }
 
         private static MainWelcomePage instance;
@@ -60,11 +64,6 @@ namespace NU_Society_Link.View
             set => lblPhone.Text = value;
         }
 
-        public string lblPositionText{
-            get => lblPosition.Text;
-            set => lblPosition.Text = value;
-        }
-
         public string lblBatchText{
             get => lblBatch.Text;
             set => lblBatch.Text = value;
@@ -74,7 +73,10 @@ namespace NU_Society_Link.View
             get => listViewNotifications;
         }
         
-
+        public string societyInfoText{
+            get => lblSocietyInfo.Text;
+            set => lblSocietyInfo.Text = value;
+        }
 
 
     }

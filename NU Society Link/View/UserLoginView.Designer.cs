@@ -34,7 +34,7 @@
             TxtUsername = new TextBox();
             TxtPassword = new TextBox();
             Loginbtn = new Button();
-            Registerbtn = new Button(); // Added register button
+            Registerbtn = new Button();
             Loginflag = new Label();
             label2 = new Label();
             SuspendLayout();
@@ -45,9 +45,9 @@
             label2.FlatStyle = FlatStyle.Flat;
             label2.Font = new Font("Bahnschrift SemiCondensed", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.WhiteSmoke;
-            label2.Location = new Point(79, 161);
+            label2.Location = new Point(147, 132);
             label2.Name = "label2";
-            label2.Size = new Size(138, 34);
+            label2.Size = new Size(108, 27);
             label2.TabIndex = 1;
             label2.Text = "Username: ";
             // 
@@ -56,9 +56,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Bahnschrift SemiBold", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.WhiteSmoke;
-            label1.Location = new Point(14, 13);
+            label1.Location = new Point(328, 20);
             label1.Name = "label1";
-            label1.Size = new Size(141, 57);
+            label1.Size = new Size(114, 46);
             label1.TabIndex = 0;
             label1.Text = "Login";
             // 
@@ -67,28 +67,28 @@
             label3.AutoSize = true;
             label3.Font = new Font("Bahnschrift SemiCondensed", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.WhiteSmoke;
-            label3.Location = new Point(79, 255);
+            label3.Location = new Point(147, 226);
             label3.Name = "label3";
-            label3.Size = new Size(127, 34);
+            label3.Size = new Size(100, 27);
             label3.TabIndex = 2;
             label3.Text = "Password:";
             // 
             // TxtUsername
             // 
             TxtUsername.Font = new Font("Bahnschrift SemiCondensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TxtUsername.Location = new Point(79, 194);
+            TxtUsername.Location = new Point(147, 165);
             TxtUsername.Margin = new Padding(3, 4, 3, 4);
             TxtUsername.Name = "TxtUsername";
-            TxtUsername.Size = new Size(461, 32);
+            TxtUsername.Size = new Size(461, 27);
             TxtUsername.TabIndex = 3;
             // 
             // TxtPassword
             // 
             TxtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TxtPassword.Location = new Point(79, 289);
+            TxtPassword.Location = new Point(147, 260);
             TxtPassword.Margin = new Padding(3, 4, 3, 4);
             TxtPassword.Name = "TxtPassword";
-            TxtPassword.Size = new Size(461, 34);
+            TxtPassword.Size = new Size(461, 29);
             TxtPassword.TabIndex = 4;
             // 
             // Loginbtn
@@ -98,7 +98,7 @@
             Loginbtn.FlatStyle = FlatStyle.Popup;
             Loginbtn.Font = new Font("Bahnschrift SemiBold SemiConden", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Loginbtn.ForeColor = Color.WhiteSmoke;
-            Loginbtn.Location = new Point(79, 395);
+            Loginbtn.Location = new Point(147, 366);
             Loginbtn.Margin = new Padding(3, 4, 3, 4);
             Loginbtn.Name = "Loginbtn";
             Loginbtn.Size = new Size(217, 49);
@@ -113,7 +113,7 @@
             Registerbtn.FlatStyle = FlatStyle.Popup;
             Registerbtn.Font = new Font("Bahnschrift SemiBold SemiConden", 13.8F, FontStyle.Bold);
             Registerbtn.ForeColor = Color.WhiteSmoke;
-            Registerbtn.Location = new Point(323, 395);
+            Registerbtn.Location = new Point(391, 366);
             Registerbtn.Margin = new Padding(3, 4, 3, 4);
             Registerbtn.Name = "Registerbtn";
             Registerbtn.Size = new Size(217, 49);
@@ -125,17 +125,17 @@
             // 
             Loginflag.AutoSize = true;
             Loginflag.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Loginflag.Location = new Point(374, 255);
+            Loginflag.Location = new Point(442, 226);
             Loginflag.Name = "Loginflag";
-            Loginflag.Size = new Size(0, 28);
+            Loginflag.Size = new Size(0, 21);
             Loginflag.TabIndex = 7;
             // 
             // UserLoginView
             // 
-            AutoScaleDimensions = new SizeF(8F, 21F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(12, 116, 137);
-            ClientSize = new Size(635, 630);
+            ClientSize = new Size(635, 508);
             Controls.Add(Loginflag);
             Controls.Add(Registerbtn);
             Controls.Add(Loginbtn);
