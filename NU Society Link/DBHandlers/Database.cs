@@ -16,10 +16,15 @@ namespace NU_Society_Link.DBHandlers
         public SqlConnection connection;
 
 
-        private Database(){ 
+        private Database(){
             // Add your code here to initialize the database
-                string connectionString = "Server=DESKTOP-735OJT2\\SQLEXPRESS;Database=SMS;Trusted_Connection=True;";
-                connection = new SqlConnection(connectionString);
+
+            
+
+                string connectionString = "Data Source=DESKTOP-2J2DEI1;" +
+              "Initial Catalog=SMS;" +
+              "Integrated Security=SSPI;";
+            connection = new SqlConnection(connectionString);
                 connection.Open();
         }
 

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NU_Society_Link.View;
 using NU_Society_Link.Models;
+using NU_Society_Link.Presenters;
 
 namespace NU_Society_Link.Presenter
 {
@@ -16,6 +17,7 @@ namespace NU_Society_Link.Presenter
         private MembersPresenter membersPresenter;
         private MainWelcomePresenter mainWelcomePresenter;
         private AddEventPresenter addEventPresenter;
+        private CurrentEventsPresenter currentEventsPresenter;
 
         private User user;
         
@@ -30,7 +32,9 @@ namespace NU_Society_Link.Presenter
             this.view.MembersView += Members;
             this.view.Back += MainWelcome;
             this.view.Logout += Logout;
-            
+            this.view.CurrentEvents += Current_Events;
+
+
             MainWelcome(null, EventArgs.Empty);
             this.view.Show();
         }
@@ -57,7 +61,19 @@ namespace NU_Society_Link.Presenter
             // Bring the AddEventView to the front
             addEventView.BringToFront();
         }
+        public void Current_Events(object? sender, EventArgs e)
+        {
+            Clear(); // Clear any existing views
 
+            // Get the singleton instance of AddEventView
+            CurrentEvents CurrentEventView = CurrentEvents.GetInstance(view);
+
+            // Create an instance of AddEventPresenter and pass the view and user
+            CurrentEventsPresenter addEventPresenter = new CurrentEventsPresenter(CurrentEventView, user);
+
+            // Bring the AddEventView to the front
+            CurrentEventView.BringToFront();
+        }
 
         public void AddSociety(object? sender, EventArgs e)
         {
