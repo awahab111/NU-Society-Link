@@ -26,21 +26,42 @@ namespace NU_Society_Link.View
 
         public event EventHandler? Logout;
 
+        public event EventHandler? AddEvent;
+
         public MainView()
         {
             InitializeComponent();
             AssociateandRaiseEvents();
         }
 
-        void AssociateandRaiseEvents(){
+        void AssociateandRaiseEvents()
+        {
             AddSocietybtn.Click += delegate { AddSociety?.Invoke(this, EventArgs.Empty); };
             Membersbtn.Click += delegate { MembersView?.Invoke(this, EventArgs.Empty); };
             Backbtn.Click += delegate { Back?.Invoke(this, EventArgs.Empty); };
             Logoutbtn.Click += delegate { Logout?.Invoke(this, EventArgs.Empty); };
-        }
-        
-        
-        
+            btnAddEvent.Click += delegate { AddEvent?.Invoke(this, EventArgs.Empty); };
 
+        }
+
+        private void Membersbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddSocietybtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

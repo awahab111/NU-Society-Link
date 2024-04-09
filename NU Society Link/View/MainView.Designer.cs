@@ -42,6 +42,7 @@ namespace NU_Society_Link.View
         private void InitializeComponent()
         {
             leftPanel = new Panel();
+            btnAddEvent = new Button();
             AddSocietybtn = new Button();
             Membersbtn = new Button();
             Backbtn = new Button();
@@ -55,6 +56,7 @@ namespace NU_Society_Link.View
             // 
             leftPanel.BackColor = Color.FromArgb(12, 116, 137);
             leftPanel.BorderStyle = BorderStyle.FixedSingle;
+            leftPanel.Controls.Add(btnAddEvent);
             leftPanel.Controls.Add(AddSocietybtn);
             leftPanel.Controls.Add(Membersbtn);
             leftPanel.Controls.Add(Backbtn);
@@ -65,6 +67,21 @@ namespace NU_Society_Link.View
             leftPanel.Name = "leftPanel";
             leftPanel.Size = new Size(201, 561);
             leftPanel.TabIndex = 0;
+            // 
+            // btnAddEvent
+            // 
+            btnAddEvent.BackColor = Color.FromArgb(4, 59, 72);
+            btnAddEvent.Cursor = Cursors.Hand;
+            btnAddEvent.FlatStyle = FlatStyle.Popup;
+            btnAddEvent.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAddEvent.ForeColor = Color.WhiteSmoke;
+            btnAddEvent.Location = new Point(10, 193);
+            btnAddEvent.Name = "btnAddEvent";
+            btnAddEvent.Size = new Size(177, 23);
+            btnAddEvent.TabIndex = 5;
+            btnAddEvent.Text = "Add Event";
+            btnAddEvent.UseVisualStyleBackColor = false;
+            btnAddEvent.Click += button1_Click;
             // 
             // AddSocietybtn
             // 
@@ -79,6 +96,7 @@ namespace NU_Society_Link.View
             AddSocietybtn.TabIndex = 0;
             AddSocietybtn.Text = "Add Society";
             AddSocietybtn.UseVisualStyleBackColor = false;
+            AddSocietybtn.Click += AddSocietybtn_Click;
             // 
             // Membersbtn
             // 
@@ -93,6 +111,7 @@ namespace NU_Society_Link.View
             Membersbtn.TabIndex = 1;
             Membersbtn.Text = "Members";
             Membersbtn.UseVisualStyleBackColor = false;
+            Membersbtn.Click += Membersbtn_Click;
             // 
             // Backbtn
             // 
@@ -147,5 +166,6 @@ namespace NU_Society_Link.View
         }
 
         #endregion
+        private Button btnAddEvent;
     }
 }

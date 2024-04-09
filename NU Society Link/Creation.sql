@@ -1,4 +1,6 @@
+Drop Database if exists SMS
 CREATE DATABASE SMS
+
 use SMS
 
 CREATE TABLE Users (
@@ -13,6 +15,22 @@ INSERT INTO Users (RollNumber, Username, Password, isAdmin) VALUES
 ('1002', '1', '1', 0),
 ('1003', 'user3', 'passwordhash3' ,0),
 ('1004', 'user4', 'passwordhash4' ,0);
+
+
+CREATE TABLE Events (
+    Event_id INT IDENTITY(1,1) PRIMARY KEY,
+	Society_id INT,
+    Society_name VARCHAR(255),
+    Event_type VARCHAR(255),
+    Event_title VARCHAR(255),
+    Start_time DATETIME,
+    End_time DATETIME,
+    Expected_participants INT,
+    Venue_name VARCHAR(255),
+    Event_description VARCHAR(MAX),
+    Event_requirements VARCHAR(MAX)
+);
+
 
 
 CREATE TABLE Society (
@@ -85,3 +103,4 @@ VALUES
 (1004, 'Alice Williams', '2023', 'alicewilliams@example.com', '2233445566')
 
 select * from Students
+select * from Events

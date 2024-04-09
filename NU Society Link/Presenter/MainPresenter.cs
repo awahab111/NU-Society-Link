@@ -15,18 +15,22 @@ namespace NU_Society_Link.Presenter
         private AddSocietyPresenter addSocietyPresenter;
         private MembersPresenter membersPresenter;
         private MainWelcomePresenter mainWelcomePresenter;
+        private AddEventPresenter addEventPresenter;
 
         private User user;
+        
 
         public MainPresenter(MainView view, User u)
         {
             this.view = view;
             this.user = u;
 
+            this.view.AddEvent += AddEvents;
             this.view.AddSociety += AddSociety;
             this.view.MembersView += Members;
             this.view.Back += MainWelcome;
             this.view.Logout += Logout;
+            
             MainWelcome(null, EventArgs.Empty);
             this.view.Show();
         }
@@ -39,6 +43,21 @@ namespace NU_Society_Link.Presenter
             mainLoginRegister.Show();
             view.Close();
         }
+
+        public void AddEvents(object? sender, EventArgs e)
+        {
+            Clear(); // Clear any existing views
+
+            // Get the singleton instance of AddEventView
+            AddEvent addEventView = AddEvent.GetInstance(view);
+
+            // Create an instance of AddEventPresenter and pass the view and user
+            AddEventPresenter addEventPresenter = new AddEventPresenter(addEventView, user );
+
+            // Bring the AddEventView to the front
+            addEventView.BringToFront();
+        }
+
 
         public void AddSociety(object? sender, EventArgs e)
         {

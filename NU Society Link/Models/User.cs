@@ -11,7 +11,10 @@ namespace NU_Society_Link.Models
         private int id;
         private string username;
         private string password;
-        private bool isadmin;    
+        private bool isadmin;
+        //private int id_society;
+
+
 
         public User(int id, string username, string password,bool isadmin)
         {
@@ -25,6 +28,9 @@ namespace NU_Society_Link.Models
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
         public bool isAdmin { get => isadmin; set => isadmin = value; }
+
+        //public int society_id  { get => id_society; set => id_society = value; }
+
 
     }
 }
