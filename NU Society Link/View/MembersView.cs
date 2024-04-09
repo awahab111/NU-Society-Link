@@ -19,6 +19,8 @@ namespace NU_Society_Link.View
 
         public event EventHandler? AddMember;
 
+        public event EventHandler? AddTask;
+
         public string SearchQuery => txtSearch.Text;
 
         public string SetWarning
@@ -31,7 +33,7 @@ namespace NU_Society_Link.View
             InitializeComponent();
             btnSearch.Click += delegate { SearchMembers?.DynamicInvoke(this, EventArgs.Empty); };
             btnAddMember.Click += delegate { AddMember?.DynamicInvoke(this, EventArgs.Empty); };
-            
+            btnAssignTask.Click += delegate { AddTask?.DynamicInvoke(this, EventArgs.Empty); };
         }
 
         private static MembersView? instance;

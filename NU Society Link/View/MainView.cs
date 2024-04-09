@@ -28,6 +28,8 @@ namespace NU_Society_Link.View
 
         public event EventHandler? AddEvent;
 
+        public event EventHandler? ViewTasks;
+
         public MainView()
         {
             InitializeComponent();
@@ -41,6 +43,7 @@ namespace NU_Society_Link.View
             Backbtn.Click += delegate { Back?.Invoke(this, EventArgs.Empty); };
             Logoutbtn.Click += delegate { Logout?.Invoke(this, EventArgs.Empty); };
             btnAddEvent.Click += delegate { AddEvent?.Invoke(this, EventArgs.Empty); };
+            ViewTaskbtn.Click += delegate { ViewTasks?.Invoke(this, EventArgs.Empty); };
 
         }
 
