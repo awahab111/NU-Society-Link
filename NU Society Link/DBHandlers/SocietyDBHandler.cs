@@ -31,29 +31,6 @@ namespace NU_Society_Link.Models
             command.ExecuteNonQuery();
         }
 
-
-        public void SaveEvent(int societyId, string societyName, string eventType, string eventTitle, DateTime startTime, DateTime endTime, int expectedParticipants, string venueName, string eventDescription, string eventRequirements)
-        {
-            string query = @"INSERT INTO Events (Society_id, Society_name, Event_type, Event_title, Start_time, End_time, Expected_participants, Venue_name, Event_description, Event_requirements)
-                            VALUES (@societyId, @societyName, @eventType, @eventTitle, @startTime, @endTime, @expectedParticipants, @venueName, @eventDescription, @eventRequirements)";
-
-            using (var command = db.connection.CreateCommand())
-            {
-                command.CommandText = query;
-                command.Parameters.AddWithValue("@societyId", societyId);
-                command.Parameters.AddWithValue("@societyName", societyName);
-                command.Parameters.AddWithValue("@eventType", eventType);
-                command.Parameters.AddWithValue("@eventTitle", eventTitle);
-                command.Parameters.AddWithValue("@startTime", startTime);
-                command.Parameters.AddWithValue("@endTime", endTime);
-                command.Parameters.AddWithValue("@expectedParticipants", expectedParticipants);
-                command.Parameters.AddWithValue("@venueName", venueName);
-                command.Parameters.AddWithValue("@eventDescription", eventDescription);
-                command.Parameters.AddWithValue("@eventRequirements", eventRequirements);
-                command.ExecuteNonQuery();
-            }
-        }
-
         public void ApproveSociety(int societyID)
         {
             string query = @"UPDATE Society SET IsApproved = 1 WHERE SocietyID = @societyID";

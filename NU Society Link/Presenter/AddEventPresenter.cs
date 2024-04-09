@@ -8,7 +8,7 @@ namespace NU_Society_Link.Presenter
     public class AddEventPresenter
     {
         private AddEvent view;
-        private SocietyDBHandler societyDBHandler;
+        private EventsDBHandler events;
         
         private User user;
 
@@ -20,7 +20,7 @@ namespace NU_Society_Link.Presenter
 
         public AddEventPresenter(AddEvent view, User u)
         {
-            societyDBHandler = new SocietyDBHandler();
+            events = new EventsDBHandler();
             this.user = u;
             this.view = view;
             this.view.SaveEvent += SaveEvent;
@@ -53,10 +53,9 @@ namespace NU_Society_Link.Presenter
             Student std = dbHandler.GetStudent((user.Id).ToString());
             SocietyMember member = societyMembersDBHandler.GetMember(std);
 
-
-            if (IsNullOrEmpty(view.Society_name))
+            if (!int.TryParse(expectedParticipants, out int participants) || participants < 0)
             {
-                view.flaglabel = "Enter Society Name";
+                view.flaglabel = "Enter No. of Participants";
                 return;
             }
 
@@ -104,7 +103,7 @@ namespace NU_Society_Link.Presenter
             }
 
 
-            societyDBHandler.SaveEvent(member.SocietyId, society_name, eventType, eventName, startTime, endTime, expectedParticipants, venueName, eventDescription, eventRequirements);
+            events.SaveEvent(member.SocietyId, eventType, eventName, startTime, endTime, int.Parse(expectedParticipants), venueName, eventDescription, eventRequirements);
 
             view.success();
         }

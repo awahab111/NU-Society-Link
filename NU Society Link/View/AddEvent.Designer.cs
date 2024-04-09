@@ -40,7 +40,13 @@
             rtbEventReq = new RichTextBox();
             lblEventReq = new Label();
             StartTime = new DateTimePicker();
+            StartTime.Format = DateTimePickerFormat.Custom;
+            StartTime.CustomFormat = " dd/MM/yyyy  HH:mm";
+            StartTime.ShowUpDown = true;
             EndTime = new DateTimePicker();
+            EndTime.Format = DateTimePickerFormat.Custom;
+            EndTime.CustomFormat = " dd/MM/yyyy  HH:mm";
+            EndTime.ShowUpDown = true;
             
             SuspendLayout();
             // 
@@ -230,8 +236,6 @@
             Controls.Add(txtEventDesc);
             Controls.Add(lblEventName);
             Controls.Add(txtEventName);
-            Controls.Add(lblSocietyName);
-            Controls.Add(txtSocietyName);
             Controls.Add(btnSave);
             Controls.Add(lblDescription);
             Controls.Add(lblEventType);

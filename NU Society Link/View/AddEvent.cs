@@ -18,26 +18,7 @@ namespace NU_Society_Link.View
             InitializeComponent();
             AssociateandRaiseEvents();
         }
-        //lblEventName = new Label();
-        //txtEventName = new TextBox();
-        //lblSocietyName = new Label();
-        //txtSocietyName = new TextBox();
-        //btnSave = new Button();
-        //lblDescription = new Label();
-        //lblEventType = new Label();
-        //txtEventType = new TextBox();
-        //lblEventStartTime = new Label();
-        //txtEventStartTime = new TextBox();
-        //lblEventEndTime = new Label();
-        //txtEventEndTIme = new TextBox();
-        //lblExpParticipants = new Label();
-        //txtExpParticipants = new TextBox();
-        //lblVenueName = new Label();
-        //txtVenueName = new TextBox();
-        //txtEventDesc = new RichTextBox();
-        //flaglbl = new Label();
-        //rtbEventReq = new RichTextBox();
-        //lblEventReq = new Label();
+
         public int Society_id { get; set; }
         public event EventHandler? SaveEvent;
 
@@ -72,7 +53,7 @@ namespace NU_Society_Link.View
             set { EndTime.Value = value; }
         }
 
-        public int expected_participants { get { return int.Parse(txtExpParticipants.Text); } set { txtExpParticipants.Text = value.ToString(); } }
+        public string expected_participants { get { return txtExpParticipants.Text; } set { txtExpParticipants.Text = value.ToString(); } }
 
         public string venue_name
         {
