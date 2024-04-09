@@ -43,6 +43,7 @@ namespace NU_Society_Link.Presenter
             {
                 this.view.SearchMembers += SearchMembers;
                 this.view.AddMember += AddNewMember;
+                this.view.AddTask += AddTask;
                 PopulateDataGridView();
             }
 
@@ -75,6 +76,34 @@ namespace NU_Society_Link.Presenter
 
             
         }
+
+
+        private void AddTask(object? sender, EventArgs e)
+        {
+            Debug.WriteLine("Add Task Clicked");
+            StudentsDBHandler studentsDBHandler = new StudentsDBHandler();
+            Student student = studentsDBHandler.GetStudent((user.Id).ToString());
+            SocietyMember member = societyMembersDBHandler.GetMember(student);
+            if (member == null)
+            {
+                view.SetWarning = "WARNING: You are not a member of any society. You cannot add Task.";
+                return;
+            }
+            if (member.MemberPosition == "President" || member.MemberPosition == "Vice President" || member.MemberPosition == "General Secretary")
+            {
+                view.SetWarning = "";
+                AssignTaskView addMemberView = new AssignTaskView();
+                AssignTaskPresenter assignTaskPresenter = new AssignTaskPresenter(addMemberView, member);
+                addMemberView.Show();
+            }
+            else
+            {
+                view.SetWarning = "WARNING: You are not the allowed to assign members.";
+            }
+
+            
+        }
+
 
         private void SearchMembers(object? sender, EventArgs e)
         {

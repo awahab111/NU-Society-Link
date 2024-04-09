@@ -19,6 +19,10 @@ namespace NU_Society_Link.Presenter
         private AddEventPresenter addEventPresenter;
         private CurrentEventsPresenter currentEventsPresenter;
 
+        
+        private ViewTasksPresenter viewTasksPresenter;
+
+
         private User user;
         
 
@@ -31,6 +35,7 @@ namespace NU_Society_Link.Presenter
             this.view.AddSociety += AddSociety;
             this.view.MembersView += Members;
             this.view.Back += MainWelcome;
+            this.view.ViewTasks += ViewTasks;
             this.view.Logout += Logout;
             this.view.CurrentEvents += Current_Events;
 
@@ -91,6 +96,15 @@ namespace NU_Society_Link.Presenter
             membersView.BringToFront();
         }
 
+        public void ViewTasks(object? sender, EventArgs e)
+        {
+            Clear();
+            ViewTasksView tasksviw = new ViewTasksView(view);
+            viewTasksPresenter = new ViewTasksPresenter(tasksviw, user); // Assign the value directly to the field
+            tasksviw.BringToFront();
+        }
+
+
         private void MainWelcome(object? sender, EventArgs e){
             Clear();
             MainWelcomePage mainWelcomePage = MainWelcomePage.GetInstance(view);
@@ -101,7 +115,10 @@ namespace NU_Society_Link.Presenter
             addSocietyPresenter?.Dispose();
             membersPresenter?.Dispose();
             mainWelcomePresenter?.Dispose();
-
+            addEventPresenter?.Dispose();
+            viewTasksPresenter?.Dispose();
+            
+            AddEvent.GetInstance(view).Delete();
             AddSocietyView.GetInstance(view).Delete();
             MembersView.GetInstance(view).Delete();
             MainWelcomePage.GetInstance(view).Delete();

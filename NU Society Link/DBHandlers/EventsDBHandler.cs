@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +37,28 @@ namespace NU_Society_Link.DBHandlers
                 command.ExecuteNonQuery();
             }
         }
+
+        public int GetEvent(string EventTitle){
+            string query = "SELECT * FROM  Events WHERE Event_title = @EventTitle";
+            using (var command = db.connection.CreateCommand())
+            {
+
+                command.Parameters.AddWithValue("@EventTitle", EventTitle);
+                command.CommandText = query;
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Debug.WriteLine(reader["Event_id"]);
+                        return (int)reader["Event_id"];
+                    }
+                }
+            }
+            return 0;
+        }
+
+        
+
 
 
 

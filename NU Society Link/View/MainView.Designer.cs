@@ -2,18 +2,16 @@
 using System.Windows.Forms;
 
 namespace NU_Society_Link.View
-
 {
     partial class MainView
     {
         private PictureBox logoPictureBox;
         private System.Windows.Forms.Panel leftPanel;
         private System.Windows.Forms.Button AddSocietybtn;
-        private System.Windows.Forms.Button Membersbtn; // Added button for Members
-        private System.Windows.Forms.Button Backbtn; // Added button for Members
-        private System.Windows.Forms.Button Logoutbtn; // Added button for Members
-// Added button for Members
- 
+        private System.Windows.Forms.Button Membersbtn;
+        private System.Windows.Forms.Button Backbtn;
+        private System.Windows.Forms.Button Logoutbtn;
+        private System.Windows.Forms.Button ViewTaskbtn; // Added button for View Task
 
         /// <summary>
         /// Required designer variable.
@@ -48,6 +46,7 @@ namespace NU_Society_Link.View
             Membersbtn = new Button();
             Backbtn = new Button();
             Logoutbtn = new Button();
+            ViewTaskbtn = new Button(); // Added button for View Task
             logoPictureBox = new PictureBox();
             AddEventSummary = new Button();
             leftPanel.SuspendLayout();
@@ -65,6 +64,7 @@ namespace NU_Society_Link.View
             leftPanel.Controls.Add(Membersbtn);
             leftPanel.Controls.Add(Backbtn);
             leftPanel.Controls.Add(Logoutbtn);
+            leftPanel.Controls.Add(ViewTaskbtn); // Added button for View Task
             leftPanel.Controls.Add(logoPictureBox);
             leftPanel.Dock = DockStyle.Left;
             leftPanel.Location = new Point(0, 0);
@@ -157,6 +157,20 @@ namespace NU_Society_Link.View
             Logoutbtn.Text = "Logout";
             Logoutbtn.UseVisualStyleBackColor = false;
             // 
+            // ViewTaskbtn
+            // 
+            ViewTaskbtn.BackColor = Color.FromArgb(4, 59, 72);
+            ViewTaskbtn.Cursor = Cursors.Hand;
+            ViewTaskbtn.FlatStyle = FlatStyle.Popup;
+            ViewTaskbtn.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ViewTaskbtn.ForeColor = Color.WhiteSmoke;
+            ViewTaskbtn.Location = new Point(10, 250);
+            ViewTaskbtn.Name = "ViewTaskbtn";
+            ViewTaskbtn.Size = new Size(177, 23);
+            ViewTaskbtn.TabIndex = 6;
+            ViewTaskbtn.Text = "View Task";
+            ViewTaskbtn.UseVisualStyleBackColor = false;
+            // 
             // logoPictureBox
             // 
             logoPictureBox.BorderStyle = BorderStyle.FixedSingle;
@@ -196,10 +210,12 @@ namespace NU_Society_Link.View
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).EndInit();
             ResumeLayout(false);
         }
+       
 
-        #endregion
+
         private Button btnAddEvent;
         private Button btnCurrentEvents;
         private Button AddEventSummary;
+
     }
 }

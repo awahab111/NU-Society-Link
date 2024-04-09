@@ -38,8 +38,6 @@ namespace NU_Society_Link
             
             Application.Run((Form)view);
             
-
-            
         }
     }
 }

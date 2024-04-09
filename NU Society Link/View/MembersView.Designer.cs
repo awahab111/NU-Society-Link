@@ -4,12 +4,13 @@
     {
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnAddMember; // Added button
+        private System.Windows.Forms.Button btnAddMember;
+        private System.Windows.Forms.Button btnAssignTask; // Added button
         private System.Windows.Forms.DataGridView dgvMembers;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMemberName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPosition;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBatch;
-        private System.Windows.Forms.Label lblWarning; // Added label
+        private System.Windows.Forms.Label lblWarning;
         private System.ComponentModel.IContainer components = null;
 
         protected override void Dispose(bool disposing)
@@ -26,6 +27,7 @@
             txtSearch = new TextBox();
             btnSearch = new Button();
             btnAddMember = new Button();
+            btnAssignTask = new Button(); // Initialize the new button
             dgvMembers = new DataGridView();
             colMemberName = new DataGridViewTextBoxColumn();
             colPosition = new DataGridViewTextBoxColumn();
@@ -76,6 +78,21 @@
             btnAddMember.Text = "Add Member";
             btnAddMember.UseVisualStyleBackColor = false;
             // 
+            // btnAssignTask
+            // 
+            btnAssignTask.BackColor = Color.FromArgb(4, 59, 72);
+            btnAssignTask.Cursor = Cursors.Hand;
+            btnAssignTask.FlatStyle = FlatStyle.Popup;
+            btnAssignTask.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold);
+            btnAssignTask.ForeColor = Color.WhiteSmoke;
+            btnAssignTask.Location = new Point(713, 113); // Adjust the location of the button
+            btnAssignTask.Margin = new Padding(3, 4, 3, 4);
+            btnAssignTask.Name = "btnAssignTask";
+            btnAssignTask.Size = new Size(114, 35);
+            btnAssignTask.TabIndex = 3;
+            btnAssignTask.Text = "Assign Task";
+            btnAssignTask.UseVisualStyleBackColor = false;
+            // 
             // dgvMembers
             // 
             dgvMembers.AllowUserToAddRows = false;
@@ -93,7 +110,7 @@
             dgvMembers.RowHeadersWidth = 51;
             dgvMembers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvMembers.Size = new Size(641, 560);
-            dgvMembers.TabIndex = 3;
+            dgvMembers.TabIndex = 4;
             dgvMembers.SortCompare += DgvMembers_SortCompare;
             // 
             // colMemberName
@@ -124,16 +141,7 @@
             lblWarning.Location = new Point(12, 448);
             lblWarning.Name = "lblWarning";
             lblWarning.Size = new Size(194, 15);
-            lblWarning.TabIndex = 4;
-            // 
-            // lblWarning
-            // 
-            lblWarning.AutoSize = true;
-            lblWarning.ForeColor = Color.Red;
-            lblWarning.Location = new Point(14, 627);
-            lblWarning.Name = "lblWarning";
-            lblWarning.Size = new Size(0, 21);
-            lblWarning.TabIndex = 4;
+            lblWarning.TabIndex = 5;
             // 
             // MembersView
             // 
@@ -144,6 +152,7 @@
             Controls.Add(txtSearch);
             Controls.Add(btnSearch);
             Controls.Add(btnAddMember);
+            Controls.Add(btnAssignTask); // Add the new button to the form
             Controls.Add(dgvMembers);
             Controls.Add(lblWarning);
             Font = new Font("Bahnschrift SemiCondensed", 10.2F);

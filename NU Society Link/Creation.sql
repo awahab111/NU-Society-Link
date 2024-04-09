@@ -103,5 +103,15 @@ VALUES
 (1003, 'Bob Johnson', '2022', 'bobjohnson@example.com', '1122334455'),
 (1004, 'Alice Williams', '2023', 'alicewilliams@example.com', '2233445566')
 
-select * from Students
-select * from Events
+
+ CREATE TABLE Tasks (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+	EventId INT,
+    assignedTo VARCHAR(4),
+    Description TEXT,
+    DueDate DATETIME,
+    IsCompleted BIT,
+	FOREIGN KEY (assignedTo) REFERENCES Users(RollNumber),
+	FOREIGN KEY (EventId) REFERENCES Events(Event_id)
+
+);

@@ -18,8 +18,18 @@ namespace NU_Society_Link.DBHandlers
 
         public void AddNotification(string userId, string message)
         {
-            // string query = $"INSERT INTO Notifications (UserId, Message, TimeStamp, Seen) VALUES ('{userId}', '{message}', '{DateTime.Now}', 0)";
-            // db.ExecuteQuery(query);
+            string query = @"INSERT INTO Notifications (UserId, Message, TimeStamp, Seen)
+                            VALUES (@userId, @message, @timeStamp, @seen)";
+            using (var command = db.connection.CreateCommand())
+            {
+                command.CommandText = query;
+                command.Parameters.AddWithValue("@userId", userId);
+                command.Parameters.AddWithValue("@message", message);
+                command.Parameters.AddWithValue("@timeStamp", DateTime.Now);
+                command.Parameters.AddWithValue("@seen", 0);
+                command.ExecuteNonQuery();
+            }
+
         }
 
         public List<Notifications> GetNotifications(string userId)

@@ -124,3 +124,16 @@ select * from students where rollNumber = 3
  from SocietyMembers
  Inner join Society on Society.societyid = SocietyMembers.SocietyId
  where SocietyMembers.rollnum= 1001
+
+
+ CREATE TABLE Tasks (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+	EventId INT,
+    assignedTo VARCHAR(4),
+    Description TEXT,
+    DueDate DATETIME,
+    IsCompleted BIT,
+	FOREIGN KEY (assignedTo) REFERENCES Users(RollNumber),
+	FOREIGN KEY (EventId) REFERENCES Events(Event_id)
+
+);
