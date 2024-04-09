@@ -1,4 +1,4 @@
-Drop Database if exists SMS
++Drop Database if exists SMS
 CREATE DATABASE SMS
 
 use SMS

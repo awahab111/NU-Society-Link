@@ -40,6 +40,7 @@ namespace NU_Society_Link.View
         private void InitializeComponent()
         {
             leftPanel = new Panel();
+            btnCurrentEvents = new Button();
             btnAddEvent = new Button();
             AddSocietybtn = new Button();
             Membersbtn = new Button();
@@ -47,6 +48,7 @@ namespace NU_Society_Link.View
             Logoutbtn = new Button();
             ViewTaskbtn = new Button(); // Added button for View Task
             logoPictureBox = new PictureBox();
+            AddEventSummary = new Button();
             leftPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
             SuspendLayout();
@@ -55,6 +57,8 @@ namespace NU_Society_Link.View
             // 
             leftPanel.BackColor = Color.FromArgb(12, 116, 137);
             leftPanel.BorderStyle = BorderStyle.FixedSingle;
+            leftPanel.Controls.Add(AddEventSummary);
+            leftPanel.Controls.Add(btnCurrentEvents);
             leftPanel.Controls.Add(btnAddEvent);
             leftPanel.Controls.Add(AddSocietybtn);
             leftPanel.Controls.Add(Membersbtn);
@@ -67,6 +71,20 @@ namespace NU_Society_Link.View
             leftPanel.Name = "leftPanel";
             leftPanel.Size = new Size(201, 561);
             leftPanel.TabIndex = 0;
+            // 
+            // btnCurrentEvents
+            // 
+            btnCurrentEvents.BackColor = Color.FromArgb(4, 59, 72);
+            btnCurrentEvents.Cursor = Cursors.Hand;
+            btnCurrentEvents.FlatStyle = FlatStyle.Popup;
+            btnCurrentEvents.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCurrentEvents.ForeColor = Color.WhiteSmoke;
+            btnCurrentEvents.Location = new Point(10, 252);
+            btnCurrentEvents.Name = "btnCurrentEvents";
+            btnCurrentEvents.Size = new Size(177, 23);
+            btnCurrentEvents.TabIndex = 6;
+            btnCurrentEvents.Text = "Current Events";
+            btnCurrentEvents.UseVisualStyleBackColor = false;
             // 
             // btnAddEvent
             // 
@@ -165,6 +183,20 @@ namespace NU_Society_Link.View
             logoPictureBox.TabIndex = 4;
             logoPictureBox.TabStop = false;
             // 
+            // AddEventSummary
+            // 
+            AddEventSummary.BackColor = Color.FromArgb(4, 59, 72);
+            AddEventSummary.Cursor = Cursors.Hand;
+            AddEventSummary.FlatStyle = FlatStyle.Popup;
+            AddEventSummary.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            AddEventSummary.ForeColor = Color.WhiteSmoke;
+            AddEventSummary.Location = new Point(10, 310);
+            AddEventSummary.Name = "AddEventSummary";
+            AddEventSummary.Size = new Size(177, 23);
+            AddEventSummary.TabIndex = 7;
+            AddEventSummary.Text = "Add Event Summary";
+            AddEventSummary.UseVisualStyleBackColor = false;
+            // 
             // MainView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -178,8 +210,12 @@ namespace NU_Society_Link.View
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).EndInit();
             ResumeLayout(false);
         }
-        private Button btnAddEvent;
+       
 
-        #endregion
+
+        private Button btnAddEvent;
+        private Button btnCurrentEvents;
+        private Button AddEventSummary;
+
     }
 }
