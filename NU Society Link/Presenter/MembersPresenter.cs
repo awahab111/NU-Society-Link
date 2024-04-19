@@ -145,7 +145,7 @@ namespace NU_Society_Link.Presenter
 
             foreach (SocietyMember member in members)
             {
-                membersDataTable.Rows.Add(member.RollNum ,member.Name, member.MemberPosition, member.Batch);
+                membersDataTable.Rows.Add(member.RollNum, member.Name, member.MemberPosition, member.Batch);
             }
 
             view.PopulateGridView(membersDataTable);

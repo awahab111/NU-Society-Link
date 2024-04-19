@@ -137,3 +137,12 @@ select * from students where rollNumber = 3
 	FOREIGN KEY (EventId) REFERENCES Events(Event_id)
 
 );
+
+select * from Events
+
+SELECT * FROM Events WHERE Society_id = 1 AND Start_time >= GETDATE()
+
+
+ALTER TABLE Events
+ADD HeadId VARCHAR(4),
+FOREIGN KEY (HeadId) REFERENCES SocietyMembers(RollNum);

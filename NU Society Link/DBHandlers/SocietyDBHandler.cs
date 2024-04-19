@@ -1,5 +1,6 @@
 using Microsoft.VisualBasic;
 using NU_Society_Link.DBHandlers;
+using NU_Society_Link.Models;
 using System.Data.SqlClient;
 
 namespace NU_Society_Link.Models
@@ -20,8 +21,7 @@ namespace NU_Society_Link.Models
 
             string query = @"SELECT * FROM Events 
                           WHERE Society_id = @SocietyId 
-                          AND Start_time <= GETDATE() 
-                          AND End_time >= GETDATE()";
+                          AND Start_time >= GETDATE()";
             SqlCommand command = new SqlCommand(query, db.connection);
             command.Parameters.AddWithValue("@SocietyId", societyId);
 
@@ -34,7 +34,6 @@ namespace NU_Society_Link.Models
 
                     Event e = new Event();
                     e.Society_id = Convert.ToInt32(reader["Society_id"]);
-                    e.Society_name = reader["Society_name"].ToString();
                     e.Event_type = reader["Event_type"].ToString();
                     e.Event_title = reader["Event_title"].ToString();
                     e.start_time = Convert.ToDateTime(reader["Start_time"]);

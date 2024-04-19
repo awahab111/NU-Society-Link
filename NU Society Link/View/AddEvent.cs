@@ -24,8 +24,6 @@ namespace NU_Society_Link.View
 
         private static AddEvent? instance;
 
-        
-        
 
         public string Society_name
         {
