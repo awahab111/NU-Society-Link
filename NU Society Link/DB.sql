@@ -146,3 +146,13 @@ SELECT * FROM Events WHERE Society_id = 1 AND Start_time >= GETDATE()
 ALTER TABLE Events
 ADD HeadId VARCHAR(4),
 FOREIGN KEY (HeadId) REFERENCES SocietyMembers(RollNum);
+
+
+UPDATE Society 
+    SET SocietyName = '454',
+	SocietyDescription = 'fwfwefwe'
+
+    WHERE SocietyId = 1
+
+
+	select * from society

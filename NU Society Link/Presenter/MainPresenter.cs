@@ -101,7 +101,7 @@ namespace NU_Society_Link.Presenter
         private void MainWelcome(object? sender, EventArgs e){
             Clear();
             MainWelcomePage mainWelcomePage = MainWelcomePage.GetInstance(view);
-            mainWelcomePresenter = new MainWelcomePresenter(mainWelcomePage, user);
+            mainWelcomePresenter = new MainWelcomePresenter(mainWelcomePage, user, view);
         }
         
         public void Clear(){

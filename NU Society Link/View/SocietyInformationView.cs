@@ -25,6 +25,7 @@ namespace NU_Society_Link.View
             InitializeComponent();
             Load += delegate { LoadPage?.Invoke(this, EventArgs.Empty); };
             approveSocietyBtn.Click += delegate { ApproveSociety?.Invoke(this, EventArgs.Empty); };
+            closeButton.Click += delegate { ClosePage?.DynamicInvoke(this, EventArgs.Empty); };
         }
 
         private static SocietyInformationView instance;
@@ -38,6 +39,11 @@ namespace NU_Society_Link.View
                 instance.FormBorderStyle = FormBorderStyle.None;
             }
             return instance;
+        }
+
+        public void Delete(){
+            instance = null;
+            this.Dispose();
         }
 
         internal void updateInformation(Society society, Student s)
@@ -66,6 +72,59 @@ namespace NU_Society_Link.View
             }
 
             Debug.WriteLine("Information Updated");
+        }
+
+        public void Readonly(){
+            showDesc.ReadOnly = true;
+            showSupervisor.ReadOnly = true;
+            txtSupervisorEmail.ReadOnly = true;
+            txtType.ReadOnly = true;
+            presidentrolltxt.ReadOnly = true;
+            presidentnametxt.ReadOnly = true;
+        }
+
+        public string SocietyName{
+            get => socNamelbl.Text;
+            set => socNamelbl.Text = value;
+        }
+
+        public string SocietyDescription{
+            get => showDesc.Text;
+            set => showDesc.Text = value;
+        }
+
+        public string SocietySupervisor{
+            get => showSupervisor.Text;
+            set => showSupervisor.Text = value;
+        }
+
+        public string SocietySupervisorEmail{
+            get => txtSupervisorEmail.Text;
+            set => txtSupervisorEmail.Text = value;
+        }
+
+        public string SocietyType{
+            get => txtType.Text;
+            set => txtType.Text = value;
+        }
+
+        public string PresidentRoll{
+            get => presidentrolltxt.Text;
+            set => presidentrolltxt.Text = value;
+        }
+
+        public string PresidentName{
+            get => presidentnametxt.Text;
+            set => presidentnametxt.Text = value;
+        }
+
+        public string SocietyLogo{
+            get => pbLogo.Image.ToString();
+            set => pbLogo.Image = Image.FromFile(value);
+        }
+
+        public Button button{
+            get => approveSocietyBtn;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

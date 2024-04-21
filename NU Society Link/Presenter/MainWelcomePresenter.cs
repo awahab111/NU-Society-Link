@@ -13,14 +13,17 @@ namespace NU_Society_Link.Presenter
     public class MainWelcomePresenter
     {
         private MainWelcomePage view;
+        private MainView parent;
 
         private NotificationDBHandler dbHandler ;
 
         private User user;
-        public MainWelcomePresenter(MainWelcomePage view, User u)
+        private SocietyMember mem;
+        public MainWelcomePresenter(MainWelcomePage view, User u, MainView p)
         {
             this.view = view;
             user = u;
+            parent = p;
             dbHandler = new NotificationDBHandler();
             GreetUser();
             getNotifications();
@@ -56,6 +59,7 @@ namespace NU_Society_Link.Presenter
 
             Student std = dbHandler.GetStudent((this.user.Id).ToString());
             SocietyMember member = societyMembersDBHandler.GetMember(std);
+            mem = member;
 
             string name, email, contact, batch, position,  societyinfo;
 
@@ -90,8 +94,35 @@ namespace NU_Society_Link.Presenter
 
             view.societyInfoText = societyinfo;
 
+            if (member.MemberPosition == "President")
+            {
+                view.btnUpdateSociety.Visible = true;
+                view.btnUpdateSociety.Text = "Update Society";
+                this.view.SocietyInfo += UpdateSociety;
+            }
+            else
+            {
+                view.btnUpdateSociety.Visible = true;
+                view.btnUpdateSociety.Text = "View Society";
+                this.view.SocietyInfo += ViewSociety;
+            }
 
-        }   
+
+        }
+
+        private void UpdateSociety(object? sender, EventArgs e)
+        {
+            SocietyInformationView view = SocietyInformationView.GetInstance(parent);
+            SocietyInformationPresenter societyIOnfoPresenter = new SocietyInformationPresenter(view, mem.SocietyId.ToString(),1);
+        }
+
+        private void ViewSociety(object? sender, EventArgs e)
+        {
+            SocietyInformationView view = SocietyInformationView.GetInstance(parent);
+            SocietyInformationPresenter societyIOnfoPresenter = new SocietyInformationPresenter(view, mem.SocietyId.ToString(),2);
+        }
+
+
 
         public void Dispose(){
             view.Dispose();

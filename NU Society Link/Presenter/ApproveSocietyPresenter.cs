@@ -39,7 +39,7 @@ namespace NU_Society_Link.Presenter
 
             // Open the society information screen passing the society name and supervisor name
             SocietyInformationView societyInformationView = SocietyInformationView.GetInstance((Form)parentView);
-            SocietyInformationPresenter s = new SocietyInformationPresenter(societyInformationView, selectedSocietyId);
+            SocietyInformationPresenter s = new SocietyInformationPresenter(societyInformationView, selectedSocietyId,0);
             societyInformationView.Show();
         }
 

@@ -86,6 +86,29 @@ namespace NU_Society_Link.Models
             command.ExecuteNonQuery();
         }
 
+        public void UpdateSociety(int societyID, string societyName, string pres, string societyDescription, string societyType, string societySupervisor, string societySupervisorEmail)
+        {
+            string query = @"UPDATE Society 
+                            SET SocietyName = @societyName, 
+                                SocietyPresident = @pres, 
+                                SocietyDescription = @societyDescription, 
+                                SocietyType = @societyType, 
+                                SocietySupervisor = @societySupervisor, 
+                                SocietySupervisorEmail = @societySupervisorEmail
+                            WHERE SocietyID = @societyID";
+
+            using var command = db.connection.CreateCommand();
+            command.CommandText = query;
+            command.Parameters.AddWithValue("@societyID", societyID);
+            command.Parameters.AddWithValue("@societyName", societyName);
+            command.Parameters.AddWithValue("@pres", pres);
+            command.Parameters.AddWithValue("@societyDescription", societyDescription);
+            command.Parameters.AddWithValue("@societyType", societyType);
+            command.Parameters.AddWithValue("@societySupervisor", societySupervisor);
+            command.Parameters.AddWithValue("@societySupervisorEmail", societySupervisorEmail);
+            command.ExecuteNonQuery();
+        }
+
         public List<Society> GetSocieties()
         {
             List<Society> societies = new List<Society>();

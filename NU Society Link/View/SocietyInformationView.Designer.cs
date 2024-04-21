@@ -121,7 +121,6 @@
             showSupervisor.Location = new Point(149, 316);
             showSupervisor.Margin = new Padding(3, 4, 3, 4);
             showSupervisor.Name = "showSupervisor";
-            showSupervisor.ReadOnly = true;
             showSupervisor.Size = new Size(216, 24);
             showSupervisor.TabIndex = 15;
             // 
@@ -185,7 +184,6 @@
             presidentnametxt.Location = new Point(149, 186);
             presidentnametxt.Margin = new Padding(3, 4, 3, 4);
             presidentnametxt.Name = "presidentnametxt";
-            presidentnametxt.ReadOnly = true;
             presidentnametxt.Size = new Size(216, 24);
             presidentnametxt.TabIndex = 30;
             presidentnametxt.TextChanged += textBox1_TextChanged;
@@ -203,7 +201,6 @@
             presidentrolltxt.Location = new Point(149, 141);
             presidentrolltxt.Margin = new Padding(3, 4, 3, 4);
             presidentrolltxt.Name = "presidentrolltxt";
-            presidentrolltxt.ReadOnly = true;
             presidentrolltxt.Size = new Size(127, 24);
             presidentrolltxt.TabIndex = 32;
             // 
