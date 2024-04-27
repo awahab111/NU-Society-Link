@@ -65,6 +65,13 @@ namespace NU_Society_Link.Presenter
             int id = Convert.ToInt32(societyId);
             Debug.WriteLine(societyId);
             societyDBHandler.ApproveSociety(id);
+
+            societyDBHandler.UpdateSociety(id, view.SocietyName, view.PresidentRoll, view.SocietyDescription, 
+                        view.SocietyType, view.SocietySupervisor, view.SocietySupervisorEmail);
+
+            SocietyMembersDBHandler societyMembersDBHandler = new SocietyMembersDBHandler();
+            societyMembersDBHandler.AddMember("President", view.PresidentRoll, id);
+
             Debug.WriteLine("Society Approved");
         }
 

@@ -13,7 +13,7 @@ namespace NU_Society_Link.Presenters
     public class CurrentEventsPresenter
     {
 
-        private MainView parentView;
+        private Form parentView;
         private CurrentEvents _view;
         private Models.User _user;
 
@@ -28,7 +28,7 @@ namespace NU_Society_Link.Presenters
         private DataTable dt;
 
 
-        public CurrentEventsPresenter(CurrentEvents view,Models.User u, MainView p)
+        public CurrentEventsPresenter(CurrentEvents view,Models.User u, Form p)
         {
             _user = u;
             _view = view;
@@ -52,7 +52,7 @@ namespace NU_Society_Link.Presenters
                 Event ev = eventsDBHandler.GetEvent(title, type, venue);
 
                 EventInformationView eventDetailsView = new EventInformationView();
-                EventInformationPresenter eventDetailsPresenter = new EventInformationPresenter(eventDetailsView, _user, parentView, _view, ev);
+                EventInformationPresenter eventDetailsPresenter = new EventInformationPresenter(eventDetailsView, _user, (Form)parentView, _view, ev);
                 this._view.SelectedEvent += OnSelectedEvent;
             }
         }
@@ -65,10 +65,18 @@ namespace NU_Society_Link.Presenters
 
         private DataTable DisplayCurrentEvents()
         {
-            Student std = student_db.GetStudent((_user.Id).ToString());
-            SocietyMember member = societyMembersDBHandler.GetMember(std);
+            List<Event> events;
+            if (_user.isAdmin == true)
+            {
+                events = eventsDBHandler.GetAllEvents();
+            }
+            else{
+                Student std = student_db.GetStudent((_user.Id).ToString());
+                SocietyMember member = societyMembersDBHandler.GetMember(std);
 
-            List<Event> events = societyDBHandler.GetCurrentEvents(member.SocietyId);
+                events = societyDBHandler.GetCurrentEvents(member.SocietyId);
+            }
+            
             DataTable dt = ConvertEventsToDataTable(events);
             _view.PopulateGridView(dt);
             this._view.SelectedEvent += OnSelectedEvent;

@@ -50,7 +50,8 @@ namespace NU_Society_Link.Presenter
             view.getSocieties(societies);
         }
 
-
-
+        public void Dispose(){
+            view.Dispose();
+        }
     }
 }

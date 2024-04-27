@@ -28,7 +28,6 @@ namespace NU_Society_Link.View
 
         public event EventHandler? AddEvent;
 
-
         public event EventHandler? CurrentEvents;
 
         public event EventHandler? ViewTasks;

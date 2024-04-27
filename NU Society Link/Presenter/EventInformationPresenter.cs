@@ -12,7 +12,7 @@ namespace NU_Society_Link.Presenter
 {
     public class EventInformationPresenter
     {
-        private MainView parentView;
+        private Form parentView;
         private CurrentEvents currentEventsView;
         private EventInformationView eventInformationView;
         private Models.User user;
@@ -20,7 +20,7 @@ namespace NU_Society_Link.Presenter
 
         private StudentsDBHandler student_db = new StudentsDBHandler();
 
-        public EventInformationPresenter(EventInformationView view, Models.User u, MainView p, CurrentEvents c, Event e)
+        public EventInformationPresenter(EventInformationView view, Models.User u, Form p, CurrentEvents c, Event e)
         {
             user = u;
             eventInformationView = view;

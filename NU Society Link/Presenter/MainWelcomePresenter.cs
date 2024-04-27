@@ -94,7 +94,11 @@ namespace NU_Society_Link.Presenter
 
             view.societyInfoText = societyinfo;
 
-            if (member.MemberPosition == "President")
+            if (member == null || member.MemberPosition == null)
+            {
+                view.btnUpdateSociety.Visible = false;
+            }
+            else if (member.MemberPosition == "President")
             {
                 view.btnUpdateSociety.Visible = true;
                 view.btnUpdateSociety.Text = "Update Society";
@@ -107,7 +111,7 @@ namespace NU_Society_Link.Presenter
                 this.view.SocietyInfo += ViewSociety;
             }
 
-
+ 
         }
 
         private void UpdateSociety(object? sender, EventArgs e)

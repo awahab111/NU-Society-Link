@@ -68,5 +68,13 @@ namespace NU_Society_Link.View
         {
             Reload?.Invoke(null, EventArgs.Empty);
         }
+
+        public void Delete()
+        {
+            this.Dispose();
+            instance = null;
+            this.Close();
+        }
+
     }
 }

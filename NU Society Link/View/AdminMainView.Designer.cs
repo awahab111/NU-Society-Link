@@ -8,6 +8,7 @@ namespace NU_Society_Link.View
     {
         private Panel leftPanel;
         private Button ApproveSociety;
+        private Button EventsButton; // Added button for Events
         private Button BackButton;
         private Button LogoutButton;
         private PictureBox logoPictureBox;
@@ -16,6 +17,7 @@ namespace NU_Society_Link.View
         {
             leftPanel = new Panel();
             ApproveSociety = new Button();
+            EventsButton = new Button(); // Added button for Events
             BackButton = new Button();
             LogoutButton = new Button();
             logoPictureBox = new PictureBox();
@@ -27,6 +29,7 @@ namespace NU_Society_Link.View
             leftPanel.BackColor = Color.FromArgb(12, 116, 137);
             leftPanel.BorderStyle = BorderStyle.FixedSingle;
             leftPanel.Controls.Add(ApproveSociety);
+            leftPanel.Controls.Add(EventsButton); // Added button for Events
             leftPanel.Controls.Add(BackButton);
             leftPanel.Controls.Add(LogoutButton);
             leftPanel.Controls.Add(logoPictureBox);
@@ -49,6 +52,19 @@ namespace NU_Society_Link.View
             ApproveSociety.TabIndex = 0;
             ApproveSociety.Text = "Approve Society";
             ApproveSociety.UseVisualStyleBackColor = false;
+
+            // EventsButton
+            EventsButton.BackColor = Color.FromArgb(4, 59, 72);
+            EventsButton.FlatStyle = FlatStyle.Popup;
+            EventsButton.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold);
+            EventsButton.ForeColor = Color.WhiteSmoke;
+            EventsButton.Location = new Point(12, 150); // Adjusted position below ApproveSociety button
+            EventsButton.Margin = new Padding(3, 4, 3, 4);
+            EventsButton.Name = "EventsButton";
+            EventsButton.Size = new Size(202, 31);
+            EventsButton.TabIndex = 1;
+            EventsButton.Text = "Events";
+            EventsButton.UseVisualStyleBackColor = false;
 
             // BackButton
             BackButton.BackColor = Color.FromArgb(4, 59, 72);

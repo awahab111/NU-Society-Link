@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NU_Society_Link.Models;
+using System.Data.SqlClient;
+
 
 namespace NU_Society_Link.DBHandlers
 {
@@ -83,7 +85,46 @@ namespace NU_Society_Link.DBHandlers
         }
 
         
+        public List<Event> GetAllEvents()
+        {
+            List<Event> events = new List<Event>();
 
+
+            string query = @"SELECT * FROM Events 
+                          WHERE Start_time >= GETDATE()";
+            
+            SqlCommand command = new SqlCommand(query, db.connection);
+
+            try
+            {
+
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+
+                    Event e = new Event();
+                    e.Society_id = Convert.ToInt32(reader["Society_id"]);
+                    e.Event_type = reader["Event_type"].ToString();
+                    e.Event_title = reader["Event_title"].ToString();
+                    e.start_time = Convert.ToDateTime(reader["Start_time"]);
+                    e.end_time = Convert.ToDateTime(reader["End_time"]);
+                    e.expected_participants = Convert.ToInt32(reader["Expected_participants"]);
+                    e.venue_name = reader["Venue_name"].ToString();
+                    e.Event_description = reader["Event_description"].ToString();
+                    e.Event_Requirements = reader["Event_requirements"].ToString();
+
+
+                    events.Add(e);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+
+            return events;
+        }
 
 
 

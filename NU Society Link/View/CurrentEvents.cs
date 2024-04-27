@@ -29,7 +29,7 @@ namespace NU_Society_Link.View
 
         private static CurrentEvents? instance;
 
-        public static CurrentEvents GetInstance(MainView view)
+        public static CurrentEvents GetInstance(Form view)
         {
             if (instance == null)
             {
