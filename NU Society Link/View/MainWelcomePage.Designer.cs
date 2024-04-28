@@ -51,6 +51,7 @@
             listViewNotifications = new ListView();
             head1 = new ColumnHeader();
             header2 = new ColumnHeader();
+            Societybtn = new Button();
             SuspendLayout();
             // 
             // lblGreeting
@@ -160,12 +161,26 @@
             header2.Text = "Date";
             header2.Width = 140;
             // 
+            // Societybtn
+            // 
+            Societybtn.BackColor = Color.FromArgb(4, 59, 72);
+            Societybtn.Cursor = Cursors.Hand;
+            Societybtn.FlatStyle = FlatStyle.Popup;
+            Societybtn.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold);
+            Societybtn.Location = new Point(431, 222);
+            Societybtn.Margin = new Padding(3, 4, 3, 4);
+            Societybtn.Name = "Societybtn";
+            Societybtn.Size = new Size(154, 31);
+            Societybtn.TabIndex = 9;
+            Societybtn.UseVisualStyleBackColor = false;
+            // 
             // MainWelcomePage
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(12, 116, 137);
             ClientSize = new Size(770, 625);
+            Controls.Add(Societybtn);
             Controls.Add(lblGreeting);
             Controls.Add(lblPersonalInfo);
             Controls.Add(lblName);
@@ -188,5 +203,6 @@
 
         public ColumnHeader head1;
         public ColumnHeader header2;
+        private Button Societybtn;
     }
 }

@@ -34,7 +34,7 @@ namespace NU_Society_Link.Presenter
             string taskAssignee = view.taskAssingee;
 
             EventsDBHandler eventDBHandler = new EventsDBHandler();
-            int eventid = eventDBHandler.GetEvent(view.eventTitle);
+            int eventid = eventDBHandler.GetEventID(view.eventTitle);
 
 
             if (!string.IsNullOrEmpty(taskDescription) && !string.IsNullOrEmpty(taskAssignee))

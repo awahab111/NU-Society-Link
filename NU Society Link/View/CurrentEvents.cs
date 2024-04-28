@@ -11,6 +11,7 @@ namespace NU_Society_Link.View
     public partial class CurrentEvents : Form
     {
         public event EventHandler? SearchEvents;
+        public event EventHandler? SelectedEvent;
 
         public string SearchQuery => txtSearch.Text;
 
@@ -23,11 +24,12 @@ namespace NU_Society_Link.View
         {
             InitializeComponent();
             btnSearch.Click += delegate { SearchEvents?.DynamicInvoke(this, EventArgs.Empty); };
+            dgvEvents.SelectionChanged += delegate { SelectedEvent?.Invoke(this, EventArgs.Empty);};
         }
 
         private static CurrentEvents? instance;
 
-        public static CurrentEvents GetInstance(MainView view)
+        public static CurrentEvents GetInstance(Form view)
         {
             if (instance == null)
             {
@@ -52,6 +54,11 @@ namespace NU_Society_Link.View
             dgvEvents.DataSource = null;
             dgvEvents.Columns.Clear();
             dgvEvents.DataSource = events;
+        }
+
+        public int GetSelectedItemData()
+        {
+            return dgvEvents.CurrentCell?.RowIndex ?? -1;
         }
     }
 }

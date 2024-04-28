@@ -8,7 +8,6 @@ namespace NU_Society_Link.Models
 {
     public class SocietyMember : Student
     {
-        public new string RollNum { get; set; }
         public int SocietyId { get; set; }
         public string MemberPosition { get; set; }
         public string SocietyName { get; set; }

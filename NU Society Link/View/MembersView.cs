@@ -62,7 +62,18 @@ namespace NU_Society_Link.View
         {
             dgvMembers.DataSource = null;
             dgvMembers.Columns.Clear();
+            dgvMembers.AutoGenerateColumns = true;
             dgvMembers.DataSource = members;
+            dgvMembers.Columns["Roll Number"].Width = 100; // Set the width of the first column
+            dgvMembers.Columns["Member Name"].Width = 182; // Set the width of the second column
+            dgvMembers.Columns["Member Position"].Width = 141; // Set the width of the second column
+            dgvMembers.Columns["Member Batch"].Width = 141; // Set the width of the second column
+
+            dgvMembers.AllowUserToResizeColumns = false;
+            dgvMembers.AllowUserToResizeRows = false;
+
+
+            // Add more columns and set their widths as needed
         }
 
     }

@@ -13,13 +13,12 @@ namespace NU_Society_Link.Presenter
     public class MainPresenter
     {
         private MainView view;
+
         private AddSocietyPresenter addSocietyPresenter;
         private MembersPresenter membersPresenter;
         private MainWelcomePresenter mainWelcomePresenter;
         private AddEventPresenter addEventPresenter;
         private CurrentEventsPresenter currentEventsPresenter;
-
-        
         private ViewTasksPresenter viewTasksPresenter;
 
 
@@ -57,26 +56,20 @@ namespace NU_Society_Link.Presenter
         {
             Clear(); // Clear any existing views
 
-            // Get the singleton instance of AddEventView
             AddEvent addEventView = AddEvent.GetInstance(view);
 
-            // Create an instance of AddEventPresenter and pass the view and user
-            AddEventPresenter addEventPresenter = new AddEventPresenter(addEventView, user );
+            addEventPresenter = new AddEventPresenter(addEventView, user );
 
-            // Bring the AddEventView to the front
             addEventView.BringToFront();
         }
         public void Current_Events(object? sender, EventArgs e)
         {
             Clear(); // Clear any existing views
 
-            // Get the singleton instance of AddEventView
             CurrentEvents CurrentEventView = CurrentEvents.GetInstance(view);
 
-            // Create an instance of AddEventPresenter and pass the view and user
-            CurrentEventsPresenter addEventPresenter = new CurrentEventsPresenter(CurrentEventView, user);
+            currentEventsPresenter = new CurrentEventsPresenter(CurrentEventView, user, view);
 
-            // Bring the AddEventView to the front
             CurrentEventView.BringToFront();
         }
 
@@ -108,7 +101,7 @@ namespace NU_Society_Link.Presenter
         private void MainWelcome(object? sender, EventArgs e){
             Clear();
             MainWelcomePage mainWelcomePage = MainWelcomePage.GetInstance(view);
-            mainWelcomePresenter = new MainWelcomePresenter(mainWelcomePage, user);
+            mainWelcomePresenter = new MainWelcomePresenter(mainWelcomePage, user, view);
         }
         
         public void Clear(){
@@ -117,6 +110,7 @@ namespace NU_Society_Link.Presenter
             mainWelcomePresenter?.Dispose();
             addEventPresenter?.Dispose();
             viewTasksPresenter?.Dispose();
+            currentEventsPresenter?.Dispose();
             
             AddEvent.GetInstance(view).Delete();
             AddSocietyView.GetInstance(view).Delete();

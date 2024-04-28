@@ -17,14 +17,34 @@ namespace NU_Society_Link.Presenter
 
         private Society society;
 
-        public SocietyInformationPresenter(SocietyInformationView view, string societyId)
+        public SocietyInformationPresenter(SocietyInformationView view, string societyId, int btnFunction)
         {
             societyDBHandler = new SocietyDBHandler();
             this.view = view;
             this.view.LoadPage += new EventHandler((sender, e) => LoadSocietyInformation(sender, e, societyId));
-            this.view.ApproveSociety += new EventHandler((sender, e) => ApproveSociety(sender, e, societyId));
-            //this.view.ClosePage += Reload;
+            if (btnFunction == 0){
+                this.view.ApproveSociety += new EventHandler((sender, e) => ApproveSociety(sender, e, societyId));
+                this.view.Readonly();
+            }
+            else if (btnFunction == 1){
+                this.view.ApproveSociety += new EventHandler((sender, e) => UpdateSociety(sender, e, societyId));
+                this.view.button.Text = "Update";
+            }
+            else{
+                this.view.Readonly();
+                this.view.button.Hide();    
+            }
+            this.view.ClosePage += (sender, e) => SocietyInformationView.GetInstance(view).Delete();
             this.view.Show();
+        }
+
+        private void UpdateSociety(object? sender, EventArgs e, string societyId)
+        {
+            int id = Convert.ToInt32(societyId);
+            Debug.WriteLine(societyId);
+            societyDBHandler.UpdateSociety(id, view.SocietyName, view.PresidentRoll, view.SocietyDescription, 
+                        view.SocietyType, view.SocietySupervisor, view.SocietySupervisorEmail);
+            Debug.WriteLine("Society Updsted");
         }
 
         private void LoadSocietyInformation(object? sender, EventArgs e, string societyId)
@@ -45,6 +65,13 @@ namespace NU_Society_Link.Presenter
             int id = Convert.ToInt32(societyId);
             Debug.WriteLine(societyId);
             societyDBHandler.ApproveSociety(id);
+
+            societyDBHandler.UpdateSociety(id, view.SocietyName, view.PresidentRoll, view.SocietyDescription, 
+                        view.SocietyType, view.SocietySupervisor, view.SocietySupervisorEmail);
+
+            SocietyMembersDBHandler societyMembersDBHandler = new SocietyMembersDBHandler();
+            societyMembersDBHandler.AddMember("President", view.PresidentRoll, id);
+
             Debug.WriteLine("Society Approved");
         }
 

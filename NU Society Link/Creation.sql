@@ -20,6 +20,7 @@ INSERT INTO Users (RollNumber, Username, Password, isAdmin) VALUES
 CREATE TABLE Events (
     Event_id INT IDENTITY(1,1) PRIMARY KEY,
 	Society_id INT,
+	HeadId VARCHAR(4),
     Event_type VARCHAR(255),
     Event_title VARCHAR(255),
     Start_time DATETIME,
@@ -27,8 +28,9 @@ CREATE TABLE Events (
     Expected_participants INT,
     Venue_name VARCHAR(255),
     Event_description VARCHAR(MAX),
-    Event_requirements VARCHAR(MAX)
-	FOREIGN KEY (Society_id) REFERENCES Society(SocietyId)
+    Event_requirements VARCHAR(MAX),
+	FOREIGN KEY (Society_id) REFERENCES Society(SocietyId),
+	FOREIGN KEY (HeadId) REFERENCES SocietyMembers(RollNum)
 
 );
 

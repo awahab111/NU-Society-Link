@@ -7,17 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NU_Society_Link.Models;
 
 namespace NU_Society_Link.View
 {
     public partial class MainWelcomePage : Form
     {
         public event EventHandler ClearNotifications;
+        public event EventHandler SocietyInfo;
 
         private MainWelcomePage()
         {
             InitializeComponent();
             btnNotifications.Click += (sender, e) => ClearNotifications?.Invoke(this, e);
+            Societybtn.Click += (sender, e) => SocietyInfo?.Invoke(this, e);
 
         }
 
@@ -78,6 +81,9 @@ namespace NU_Society_Link.View
             set => lblSocietyInfo.Text = value;
         }
 
+        public Button btnUpdateSociety{
+            get => Societybtn;
+        }
 
     }
 

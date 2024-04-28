@@ -103,7 +103,7 @@ namespace NU_Society_Link.Presenter
             }
 
 
-            events.SaveEvent(member.SocietyId, eventType, eventName, startTime, endTime, int.Parse(expectedParticipants), venueName, eventDescription, eventRequirements);
+            events.SaveEvent(member.SocietyId, eventType, eventName, startTime, endTime, int.Parse(expectedParticipants), venueName, eventDescription, eventRequirements, (user.Id).ToString());
 
             view.success();
         }

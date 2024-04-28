@@ -40,15 +40,15 @@ namespace NU_Society_Link.View
         private void InitializeComponent()
         {
             leftPanel = new Panel();
+            AddEventSummary = new Button();
             btnCurrentEvents = new Button();
             btnAddEvent = new Button();
             AddSocietybtn = new Button();
             Membersbtn = new Button();
             Backbtn = new Button();
             Logoutbtn = new Button();
-            ViewTaskbtn = new Button(); // Added button for View Task
+            ViewTaskbtn = new Button();
             logoPictureBox = new PictureBox();
-            AddEventSummary = new Button();
             leftPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
             SuspendLayout();
@@ -64,13 +64,27 @@ namespace NU_Society_Link.View
             leftPanel.Controls.Add(Membersbtn);
             leftPanel.Controls.Add(Backbtn);
             leftPanel.Controls.Add(Logoutbtn);
-            leftPanel.Controls.Add(ViewTaskbtn); // Added button for View Task
+            leftPanel.Controls.Add(ViewTaskbtn);
             leftPanel.Controls.Add(logoPictureBox);
             leftPanel.Dock = DockStyle.Left;
             leftPanel.Location = new Point(0, 0);
             leftPanel.Name = "leftPanel";
             leftPanel.Size = new Size(201, 561);
             leftPanel.TabIndex = 0;
+            // 
+            // AddEventSummary
+            // 
+            AddEventSummary.BackColor = Color.FromArgb(4, 59, 72);
+            AddEventSummary.Cursor = Cursors.Hand;
+            AddEventSummary.FlatStyle = FlatStyle.Popup;
+            AddEventSummary.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            AddEventSummary.ForeColor = Color.WhiteSmoke;
+            AddEventSummary.Location = new Point(10, 310);
+            AddEventSummary.Name = "AddEventSummary";
+            AddEventSummary.Size = new Size(177, 23);
+            AddEventSummary.TabIndex = 7;
+            AddEventSummary.Text = "Add Event Summary";
+            AddEventSummary.UseVisualStyleBackColor = false;
             // 
             // btnCurrentEvents
             // 
@@ -79,7 +93,7 @@ namespace NU_Society_Link.View
             btnCurrentEvents.FlatStyle = FlatStyle.Popup;
             btnCurrentEvents.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCurrentEvents.ForeColor = Color.WhiteSmoke;
-            btnCurrentEvents.Location = new Point(10, 252);
+            btnCurrentEvents.Location = new Point(11, 254);
             btnCurrentEvents.Name = "btnCurrentEvents";
             btnCurrentEvents.Size = new Size(177, 23);
             btnCurrentEvents.TabIndex = 6;
@@ -164,7 +178,7 @@ namespace NU_Society_Link.View
             ViewTaskbtn.FlatStyle = FlatStyle.Popup;
             ViewTaskbtn.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ViewTaskbtn.ForeColor = Color.WhiteSmoke;
-            ViewTaskbtn.Location = new Point(10, 250);
+            ViewTaskbtn.Location = new Point(10, 363);
             ViewTaskbtn.Name = "ViewTaskbtn";
             ViewTaskbtn.Size = new Size(177, 23);
             ViewTaskbtn.TabIndex = 6;
@@ -183,20 +197,6 @@ namespace NU_Society_Link.View
             logoPictureBox.TabIndex = 4;
             logoPictureBox.TabStop = false;
             // 
-            // AddEventSummary
-            // 
-            AddEventSummary.BackColor = Color.FromArgb(4, 59, 72);
-            AddEventSummary.Cursor = Cursors.Hand;
-            AddEventSummary.FlatStyle = FlatStyle.Popup;
-            AddEventSummary.Font = new Font("Bahnschrift SemiBold SemiConden", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            AddEventSummary.ForeColor = Color.WhiteSmoke;
-            AddEventSummary.Location = new Point(10, 310);
-            AddEventSummary.Name = "AddEventSummary";
-            AddEventSummary.Size = new Size(177, 23);
-            AddEventSummary.TabIndex = 7;
-            AddEventSummary.Text = "Add Event Summary";
-            AddEventSummary.UseVisualStyleBackColor = false;
-            // 
             // MainView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -210,9 +210,9 @@ namespace NU_Society_Link.View
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).EndInit();
             ResumeLayout(false);
         }
-       
 
 
+        #endregion
         private Button btnAddEvent;
         private Button btnCurrentEvents;
         private Button AddEventSummary;

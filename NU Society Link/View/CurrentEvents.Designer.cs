@@ -78,8 +78,11 @@
             dgvEvents.RowHeadersWidth = 51;
             dgvEvents.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvEvents.Size = new Size(641, 560);
-            dgvEvents.TabIndex = 2;
-            //dgvEvents.CellContentClick += this.dgvEvents_CellContentClick;
+            dgvEvents.AllowUserToResizeColumns = false;
+            dgvEvents.AllowUserToResizeRows = false;
+            dgvEvents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // dgvEvents.TabIndex = 2;
             // 
             // colEventTitle
             // 
