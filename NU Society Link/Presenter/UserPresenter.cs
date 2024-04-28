@@ -41,6 +41,16 @@ namespace NU_Society_Link.Presenter
 
         private void GetUser(object? sender, EventArgs e)
         {
+            if (this.view.Username == "" || this.view.Password == "")
+            {
+                this.view.LoginSuccess = "Login Failed!";
+                return;
+            }
+            if (this.view.Username == "Username" || this.view.Password == "Password")
+            {
+                this.view.LoginSuccess = "Login Failed!";
+                return;
+            }
             User currentuser =  model.GetUser(this.view.Username, this.view.Password);
             Debug.WriteLine("GetUser method called");
             if (currentuser == null)

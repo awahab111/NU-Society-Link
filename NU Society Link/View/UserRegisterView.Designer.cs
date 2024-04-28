@@ -38,8 +38,6 @@
             txtUsername = new TextBox();
             lblPassword = new Label();
             txtPassword = new TextBox();
-            lblEmail = new Label();
-            txtEmail = new TextBox();
             lblContact = new Label();
             txtContact = new TextBox();
             lblBatch = new Label();
@@ -49,13 +47,14 @@
             label1 = new Label();
             lblName = new Label();
             txtName = new TextBox();
+            RegisterFlag = new Label();
             SuspendLayout();
             // 
             // lblId
             // 
             lblId.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblId.ForeColor = Color.WhiteSmoke;
-            lblId.Location = new Point(39, 89);
+            lblId.Location = new Point(39, 99);
             lblId.Name = "lblId";
             lblId.Size = new Size(100, 20);
             lblId.TabIndex = 0;
@@ -64,7 +63,7 @@
             // txtId
             // 
             txtId.Font = new Font("Segoe UI", 12F);
-            txtId.Location = new Point(39, 112);
+            txtId.Location = new Point(39, 122);
             txtId.Name = "txtId";
             txtId.Size = new Size(154, 29);
             txtId.TabIndex = 1;
@@ -73,7 +72,7 @@
             // 
             lblUsername.Font = new Font("Bahnschrift SemiCondensed", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblUsername.ForeColor = Color.WhiteSmoke;
-            lblUsername.Location = new Point(39, 149);
+            lblUsername.Location = new Point(39, 169);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(100, 20);
             lblUsername.TabIndex = 2;
@@ -82,7 +81,7 @@
             // txtUsername
             // 
             txtUsername.Font = new Font("Segoe UI", 12F);
-            txtUsername.Location = new Point(39, 172);
+            txtUsername.Location = new Point(39, 192);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(293, 29);
             txtUsername.TabIndex = 3;
@@ -91,7 +90,7 @@
             // 
             lblPassword.Font = new Font("Bahnschrift SemiBold Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPassword.ForeColor = Color.WhiteSmoke;
-            lblPassword.Location = new Point(39, 209);
+            lblPassword.Location = new Point(39, 246);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(100, 20);
             lblPassword.TabIndex = 4;
@@ -100,29 +99,11 @@
             // txtPassword
             // 
             txtPassword.Font = new Font("Segoe UI", 12F);
-            txtPassword.Location = new Point(39, 232);
+            txtPassword.Location = new Point(39, 269);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(293, 29);
             txtPassword.TabIndex = 5;
             txtPassword.UseSystemPasswordChar = true;
-            // 
-            // lblEmail
-            // 
-            lblEmail.Font = new Font("Bahnschrift SemiBold Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblEmail.ForeColor = Color.WhiteSmoke;
-            lblEmail.Location = new Point(391, 186);
-            lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(100, 20);
-            lblEmail.TabIndex = 6;
-            lblEmail.Text = "Email";
-            // 
-            // txtEmail
-            // 
-            txtEmail.Font = new Font("Segoe UI", 12F);
-            txtEmail.Location = new Point(391, 209);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(305, 29);
-            txtEmail.TabIndex = 7;
             // 
             // lblContact
             // 
@@ -146,7 +127,7 @@
             // 
             lblBatch.Font = new Font("Bahnschrift SemiBold Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBatch.ForeColor = Color.WhiteSmoke;
-            lblBatch.Location = new Point(39, 273);
+            lblBatch.Location = new Point(391, 169);
             lblBatch.Name = "lblBatch";
             lblBatch.Size = new Size(100, 20);
             lblBatch.TabIndex = 10;
@@ -155,7 +136,7 @@
             // txtBatch
             // 
             txtBatch.Font = new Font("Segoe UI", 12F);
-            txtBatch.Location = new Point(39, 296);
+            txtBatch.Location = new Point(391, 192);
             txtBatch.Name = "txtBatch";
             txtBatch.Size = new Size(154, 29);
             txtBatch.TabIndex = 11;
@@ -202,7 +183,7 @@
             // 
             lblName.Font = new Font("Bahnschrift SemiBold Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblName.ForeColor = Color.WhiteSmoke;
-            lblName.Location = new Point(391, 112);
+            lblName.Location = new Point(391, 99);
             lblName.Name = "lblName";
             lblName.Size = new Size(100, 20);
             lblName.TabIndex = 15;
@@ -211,10 +192,19 @@
             // txtName
             // 
             txtName.Font = new Font("Segoe UI", 12F);
-            txtName.Location = new Point(391, 135);
+            txtName.Location = new Point(391, 122);
             txtName.Name = "txtName";
             txtName.Size = new Size(305, 29);
             txtName.TabIndex = 16;
+            // 
+            // RegisterFlag
+            // 
+            RegisterFlag.Font = new Font("Bahnschrift SemiBold Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            RegisterFlag.ForeColor = Color.WhiteSmoke;
+            RegisterFlag.Location = new Point(391, 319);
+            RegisterFlag.Name = "RegisterFlag";
+            RegisterFlag.Size = new Size(305, 20);
+            RegisterFlag.TabIndex = 17;
             // 
             // UserRegisterView
             // 
@@ -222,6 +212,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(12, 116, 137);
             ClientSize = new Size(768, 463);
+            Controls.Add(RegisterFlag);
             Controls.Add(label1);
             Controls.Add(lblId);
             Controls.Add(txtId);
@@ -229,8 +220,6 @@
             Controls.Add(txtUsername);
             Controls.Add(lblPassword);
             Controls.Add(txtPassword);
-            Controls.Add(lblEmail);
-            Controls.Add(txtEmail);
             Controls.Add(lblContact);
             Controls.Add(txtContact);
             Controls.Add(lblBatch);
@@ -245,5 +234,7 @@
             ResumeLayout(false);
             PerformLayout();
         }
+
+        private Label RegisterFlag;
     }
 }

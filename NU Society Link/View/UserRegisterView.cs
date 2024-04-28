@@ -33,16 +33,14 @@ namespace NU_Society_Link.View
 
         public string Username { get => txtUsername.Text; set => throw new NotImplementedException(); }
         public string Password { get => txtPassword.Text; set => throw new NotImplementedException(); }
-        public int id { get => int.Parse(txtId.Text); set => throw new NotImplementedException(); }
-
-        public string Email { get => txtEmail.Text; set => throw new NotImplementedException(); }
+        public string id { get => txtId.Text; set => throw new NotImplementedException(); }
 
         public string Contact { get => txtContact.Text; set => throw new NotImplementedException(); }
 
         public string Batch { get => txtBatch.Text; set => throw new NotImplementedException(); }
 
         public string StudentName { get => txtName.Text; set => throw new NotImplementedException(); }
-
+        public string RegisterSuccess { get=> RegisterFlag.Text; set => RegisterFlag.Text = value; }
 
         public void ShowMessage(string message)
         {

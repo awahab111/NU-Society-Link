@@ -47,9 +47,9 @@
             label2.ForeColor = Color.WhiteSmoke;
             label2.Location = new Point(147, 132);
             label2.Name = "label2";
-            label2.Size = new Size(108, 27);
+            label2.Size = new Size(127, 27);
             label2.TabIndex = 1;
-            label2.Text = "Username: ";
+            label2.Text = "Roll Number: ";
             // 
             // label1
             // 

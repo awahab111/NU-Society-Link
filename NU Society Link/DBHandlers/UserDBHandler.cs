@@ -49,7 +49,7 @@ namespace NU_Society_Link.DBHandlers
         }
         public User GetUser(string username, string password)
         {
-            string query = "SELECT * FROM users WHERE username = @username AND password = @password";
+            string query = "SELECT * FROM users WHERE RollNumber = @username AND password = @password";
             using (var command = db.connection.CreateCommand())
             {
                 command.CommandText = query;
