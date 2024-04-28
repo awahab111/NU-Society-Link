@@ -20,7 +20,7 @@ namespace NU_Society_Link.Presenter
         private AddEventPresenter addEventPresenter;
         private CurrentEventsPresenter currentEventsPresenter;
         private ViewTasksPresenter viewTasksPresenter;
-
+        private EventSummaryPresenter eventSummaryPresenter;
 
         private User user;
         
@@ -37,10 +37,24 @@ namespace NU_Society_Link.Presenter
             this.view.ViewTasks += ViewTasks;
             this.view.Logout += Logout;
             this.view.CurrentEvents += Current_Events;
+            this.view.AddEventSummaries += EventSummary;
+            
+
 
 
             MainWelcome(null, EventArgs.Empty);
             this.view.Show();
+        }
+
+
+
+
+        public void EventSummary(object? sender, EventArgs e)
+        {
+            Clear();
+            EventSummaries eventSummariesView = EventSummaries.GetInstance(view);
+            eventSummaryPresenter = new EventSummaryPresenter(eventSummariesView); // Assign the value directly to the field
+            eventSummariesView.BringToFront();
         }
 
         private void Logout(object? sender, EventArgs e)
@@ -111,11 +125,13 @@ namespace NU_Society_Link.Presenter
             addEventPresenter?.Dispose();
             viewTasksPresenter?.Dispose();
             currentEventsPresenter?.Dispose();
-            
+            eventSummaryPresenter?.Dispose();
+
             AddEvent.GetInstance(view).Delete();
             AddSocietyView.GetInstance(view).Delete();
             MembersView.GetInstance(view).Delete();
             MainWelcomePage.GetInstance(view).Delete();
+            EventSummaries.GetInstance(view).Delete();
 
         }
 

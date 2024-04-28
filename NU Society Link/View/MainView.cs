@@ -32,6 +32,9 @@ namespace NU_Society_Link.View
 
         public event EventHandler? ViewTasks;
 
+        public event EventHandler? AddEventSummaries;
+
+
 
         public MainView()
         {
@@ -51,9 +54,8 @@ namespace NU_Society_Link.View
 
             ViewTaskbtn.Click += delegate { ViewTasks?.Invoke(this, EventArgs.Empty); };
 
-
+            AddEventSummary.Click += delegate { AddEventSummaries?.Invoke(this, EventArgs.Empty); };
         }
-
         private void Membersbtn_Click(object sender, EventArgs e)
         {
 
@@ -74,4 +76,7 @@ namespace NU_Society_Link.View
 
         }
     }
+
+   
+
 }
