@@ -20,7 +20,9 @@ namespace NU_Society_Link.DBHandlers
             // Add your code here to initialize the database
 
 
-            string connectionString = "Server=DESKTOP-735OJT2\\SQLEXPRESS;Database=SMS;Trusted_Connection=True;";
+            string connectionString = "Server=DESKTOP-2J2DEI1;Database=SMS;Integrated Security=True;";
+
+            
 
             connection = new SqlConnection(connectionString);
                 connection.Open();

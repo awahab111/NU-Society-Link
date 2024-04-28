@@ -22,10 +22,15 @@ namespace NU_Society_Link.View
 
         void AssociateandraiseEvents()
         {
-            ApproveSociety.Click += delegate { ApproveSocietyClick?.Invoke(null, EventArgs.Empty);};
+            ApproveSociety.Click += delegate { ApproveSocietyClick?.Invoke(null, EventArgs.Empty); };
             BackButton.Click += delegate { BackButtonClicked?.Invoke(null, EventArgs.Empty); };
             LogoutButton.Click += delegate { LogoutButtonClicked?.Invoke(null, EventArgs.Empty); };
             EventsButton.Click += delegate { EventsButtonClicked?.Invoke(null, EventArgs.Empty); };
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
 
         public event EventHandler ApproveSocietyClick;

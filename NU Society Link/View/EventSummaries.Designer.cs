@@ -2,13 +2,14 @@
 {
     partial class EventSummaries
     {
-        private System.Windows.Forms.Label lblEventTitle;
-        private System.Windows.Forms.TextBox txtEventTitle;
-        private System.Windows.Forms.Label lblSummary;
-        private System.Windows.Forms.RichTextBox txtSummary;
-        private System.Windows.Forms.Label lblNumberParticipants;
-        private System.Windows.Forms.TextBox txtNumberParticipants;
-        private System.Windows.Forms.Button btnSave;
+        
+        public System.Windows.Forms.Label lblEventTitle;
+        public System.Windows.Forms.TextBox txtEventTitle;
+        public System.Windows.Forms.Label lblSummary;
+        public System.Windows.Forms.RichTextBox txtSummary;
+        public System.Windows.Forms.Label lblNumberParticipants;
+        public System.Windows.Forms.TextBox txtNumberParticipants;
+        public System.Windows.Forms.Button btnSave;
 
         private void InitializeComponent()
         {
@@ -100,5 +101,7 @@
             ResumeLayout(false);
             PerformLayout();
         }
+        
+
     }
 }

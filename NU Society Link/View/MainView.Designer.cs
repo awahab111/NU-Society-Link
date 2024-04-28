@@ -11,7 +11,11 @@ namespace NU_Society_Link.View
         private System.Windows.Forms.Button Membersbtn;
         private System.Windows.Forms.Button Backbtn;
         private System.Windows.Forms.Button Logoutbtn;
-        private System.Windows.Forms.Button ViewTaskbtn; // Added button for View Task
+        private System.Windows.Forms.Button ViewTaskbtn;
+        private System.Windows.Forms.Button EventSummary;
+
+
+        // Added button for View Task
 
         /// <summary>
         /// Required designer variable.
